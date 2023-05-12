@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3m7edhlthejf"]
+
+[ext_resource type="Script" path="res://src/Player.gd" id="1_bnkpy"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lwymd"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_srbr1"]
+
+[node name="Player" type="RigidBody3D"]
+max_contacts_reported = 3
+contact_monitor = true
+can_sleep = false
+lock_rotation = true
+script = ExtResource("1_bnkpy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_lwymd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_srbr1")
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="."]
+remote_path = NodePath("../Node/Center")
+update_rotation = false
+update_scale = false
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Center" type="Marker3D" parent="Node"]
+
+[node name="CameraFocus" type="Marker3D" parent="Node/Center"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.368549, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Node/Center/CameraFocus"]
+spring_length = 5.0
+
+[node name="Camera3D" type="Camera3D" parent="Node/Center/CameraFocus/SpringArm3D"]
