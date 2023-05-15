@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3m7edhlthejf"]
+[gd_scene load_steps=5 format=3 uid="uid://d3m7edhlthejf"]
 
 [ext_resource type="Script" path="res://src/Player.gd" id="1_bnkpy"]
+[ext_resource type="PackedScene" uid="uid://b8f6lj3y6dvtm" path="res://scenes/PlayerModel.tscn" id="2_yaahn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lwymd"]
 
@@ -17,12 +18,16 @@ script = ExtResource("1_bnkpy")
 shape = SubResource("CapsuleShape3D_lwymd")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("CapsuleMesh_srbr1")
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="."]
 remote_path = NodePath("../Node/Center")
 update_rotation = false
 update_scale = false
+
+[node name="ChibiCharacterWithAnimsV17" parent="." instance=ExtResource("2_yaahn")]
+transform = Transform3D(-0.25, 0, -2.18557e-08, 0, 0.25, 0, 2.18557e-08, 0, -0.25, 0.0108134, -0.92448, 0.0420987)
 
 [node name="Node" type="Node" parent="."]
 

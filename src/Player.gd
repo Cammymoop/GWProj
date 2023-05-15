@@ -8,9 +8,9 @@ var mouse_sensitivity = 0.5
 
 var controller_look_sensitivity = 12
 
-@export var movement_force: = .7
+@export var movement_force: = .4
 
-@export var vel_limit = 7.0
+@export var vel_limit = 2.8
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -22,6 +22,8 @@ func _process(_delta):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if Input.is_action_just_pressed("Restart"):
 		get_tree().reload_current_scene()
+	
+	
 	
 	var controller_h_look = Input.get_axis("controller_look_left", "controller_look_right")
 	var controller_v_look = Input.get_axis("controller_look_up", "controller_look_down")
@@ -38,6 +40,7 @@ func camera_look(delta: Vector2, sensitivity) -> void:
 	arm.rotate_x(-delta.y * 0.01 * sensitivity)
 	camera_pivot.rotate_y(-delta.x * 0.01 * sensitivity)
 	arm.rotation.x = clamp(arm.rotation.x, -1.2, 1.2)
+	
 
 func _integrate_forces(state: PhysicsDirectBodyState3D):
 #func _physics_process(delta):
@@ -78,3 +81,8 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 	# need to add drag for if the player is not inputting movement
 	if abs(fb) < 0.1 and abs(lr) < 0.1:
 		state.linear_velocity = state.linear_velocity.lerp(Vector3.ZERO, 0.1)
+		
+	
+	global_rotation.y = camera_pivot.rotation.y
+	$ChibiCharacterWithAnimsV17/AnimationTree.set("parameters/conditions/walk", move_vec != Vector3.ZERO)
+	$ChibiCharacterWithAnimsV17/AnimationTree.set("parameters/conditions/idle", move_vec == Vector3.ZERO)

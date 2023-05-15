@@ -1,0 +1,104 @@
+[gd_scene load_steps=16 format=3 uid="uid://b8f6lj3y6dvtm"]
+
+[ext_resource type="PackedScene" uid="uid://i713xw0kvrvk" path="res://character/ChibiCharacterWithAnimsV1.7.glb" id="1_4m5fm"]
+[ext_resource type="Script" path="res://scenes/PlayerModel.gd" id="2_5cb6y"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_aaba1"]
+animation = &"Fall"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_asl4l"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qjo7k"]
+animation = &"Jump"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dq6ae"]
+animation = &"Walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_08iqf"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lxlcw"]
+xfade_time = 0.1
+advance_mode = 2
+advance_condition = &"walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_g8yhd"]
+xfade_time = 0.1
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jdsds"]
+advance_mode = 2
+advance_condition = &"jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dkyha"]
+xfade_time = 0.25
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xn0dv"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"land"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ap3ef"]
+advance_mode = 2
+advance_condition = &"jump"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_4xn5a"]
+states/Fall/node = SubResource("AnimationNodeAnimation_aaba1")
+states/Fall/position = Vector2(598, 180)
+states/Idle/node = SubResource("AnimationNodeAnimation_asl4l")
+states/Idle/position = Vector2(415, 180)
+states/Jump/node = SubResource("AnimationNodeAnimation_qjo7k")
+states/Jump/position = Vector2(598, 92)
+states/Start/position = Vector2(278, 180)
+states/Walk/node = SubResource("AnimationNodeAnimation_dq6ae")
+states/Walk/position = Vector2(415, 92)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_08iqf"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_lxlcw"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_g8yhd"), "Walk", "Jump", SubResource("AnimationNodeStateMachineTransition_jdsds"), "Jump", "Fall", SubResource("AnimationNodeStateMachineTransition_dkyha"), "Fall", "Idle", SubResource("AnimationNodeStateMachineTransition_xn0dv"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_ap3ef")]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_soh0w"]
+
+[node name="ChibiCharacterWithAnimsV17" instance=ExtResource("1_4m5fm")]
+script = ExtResource("2_5cb6y")
+
+[node name="Skeleton3D" parent="MainBody" index="0"]
+bones/0/position = Vector3(7.83307e-09, -0.0309267, 1.78025e-09)
+bones/1/rotation = Quaternion(-0.045973, 0.0389841, -0.00810978, 0.998149)
+bones/3/rotation = Quaternion(-0.105944, -0.0618014, 0.000921284, 0.992449)
+bones/5/rotation = Quaternion(-0.0148846, 0.0397575, -0.492855, 0.869075)
+bones/6/rotation = Quaternion(0.566811, -4.28082e-09, 1.49665e-05, 0.823848)
+bones/7/rotation = Quaternion(-0.0489622, -0.265092, -0.129238, 0.954268)
+bones/9/rotation = Quaternion(-0.010823, -0.00400777, -0.343166, 0.939204)
+bones/10/rotation = Quaternion(0.534513, 0.373297, -0.434141, 0.621665)
+bones/13/rotation = Quaternion(-0.0257911, -0.0817164, 0.515372, 0.852672)
+bones/14/rotation = Quaternion(0.507886, 7.44728e-09, -1.3382e-05, 0.861424)
+bones/15/rotation = Quaternion(0.0346188, -0.0883794, 0.049255, 0.994266)
+bones/16/rotation = Quaternion(-0.0185842, 0.00439065, 0.229891, 0.973029)
+bones/17/rotation = Quaternion(-0.0111942, 0.00280838, 0.239111, 0.970924)
+bones/18/rotation = Quaternion(0.498726, -0.419912, 0.488358, 0.580045)
+bones/19/rotation = Quaternion(-0.000896654, 0.000629042, 0.574253, 0.818677)
+bones/20/rotation = Quaternion(0.979565, 0.0151608, -0.0209536, 0.199458)
+bones/21/rotation = Quaternion(0.260223, 1.15106e-07, 2.74584e-08, 0.965548)
+bones/22/rotation = Quaternion(-0.718752, 0.0116808, 0.0230795, 0.694785)
+bones/23/rotation = Quaternion(0.877974, -0.0343992, 0.0260316, 0.476761)
+bones/24/rotation = Quaternion(0.327841, 1.12983e-07, 3.3375e-08, 0.944733)
+bones/25/rotation = Quaternion(-0.544599, -0.0103917, -0.0418491, 0.837587)
+bones/27/position = Vector3(1.62785, -0.313141, 0.521286)
+bones/27/rotation = Quaternion(0.0446064, 0.328006, 0.943478, 0.0164982)
+bones/29/position = Vector3(-1.52828, -0.449541, 0.555052)
+bones/29/rotation = Quaternion(0.319974, 0.283007, 0.897192, 0.112122)
+bones/30/position = Vector3(-0.544536, -1.83295, -0.37349)
+bones/31/position = Vector3(0.457528, -1.73228, 0.580949)
+bones/34/position = Vector3(-0.0948851, 1.69033, 3.62756)
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+tree_root = SubResource("AnimationNodeStateMachine_4xn5a")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_soh0w")
+parameters/conditions/idle = false
+parameters/conditions/jump = false
+parameters/conditions/land = false
+parameters/conditions/walk = false
