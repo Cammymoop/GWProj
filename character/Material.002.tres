@@ -12,3 +12,6 @@ subsurf_scatter_enabled = true
 subsurf_scatter_strength = 0.38
 subsurf_scatter_skin_mode = true
 backlight = Color(0.00392157, 0.156863, 0.717647, 1)
+proximity_fade_distance = 0.2
+distance_fade_mode = 2
+distance_fade_max_distance = 1.8

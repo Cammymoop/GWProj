@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://d3m7edhlthejf"]
+[gd_scene load_steps=7 format=3 uid="uid://d3m7edhlthejf"]
 
 [ext_resource type="Script" path="res://src/Player.gd" id="1_bnkpy"]
 [ext_resource type="PackedScene" uid="uid://cxtoq7wxlwf1t" path="res://scenes/PlayerModel.tscn" id="2_yaahn"]
@@ -7,6 +7,9 @@
 height = 1.84876
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_srbr1"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mbsen"]
+radius = 0.1
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_atitj"]
 radius = 0.454462
@@ -43,6 +46,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.368549, 0)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="Node/Center/CameraFocus"]
 collision_mask = 16
+shape = SubResource("SphereShape3D_mbsen")
 spring_length = 5.0
 
 [node name="Camera3D" type="Camera3D" parent="Node/Center/CameraFocus/SpringArm3D"]
