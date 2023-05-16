@@ -86,3 +86,9 @@ controller_look_right={
 "events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":2,"axis_value":1.0,"script":null)
 ]
 }
+
+[layer_names]
+
+3d_physics/layer_1="solid"
+3d_physics/layer_2="player"
+3d_physics/layer_5="camera"

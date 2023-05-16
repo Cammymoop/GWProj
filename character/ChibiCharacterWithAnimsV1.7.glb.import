@@ -9025,6 +9025,16 @@ _subresources={
 "slice_99/start_frame": 0,
 "slices/amount": null
 }
+},
+"materials": {
+"Material.002": {
+"use_external/enabled": true,
+"use_external/path": "res://character/Material.002.tres"
+},
+"Material.005": {
+"use_external/enabled": true,
+"use_external/path": "res://character/Material.005.tres"
+}
 }
 }
 gltf/embedded_image_handling=1
