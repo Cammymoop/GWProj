@@ -14,6 +14,7 @@ var floored: = false
 @export var vel_limit = 5.0
 
 func _ready():
+	randomize()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _process(_delta):

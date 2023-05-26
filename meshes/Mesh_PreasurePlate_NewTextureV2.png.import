@@ -2,13 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cck4cjdjuuymn"
+uid="uid://714d0h3534qs"
 path.s3tc="res://.godot/imported/Mesh_PreasurePlate_NewTextureV2.png-cccaecacd805422d7b071338954ff6cc.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 

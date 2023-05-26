@@ -2,13 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmrh63tho1owy"
+uid="uid://cm7srjvhe6rfk"
 path.s3tc="res://.godot/imported/Mesh_PointyPillar_NewTextureV2.png-51d79f28809de3804d6ba9db4d948629.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 

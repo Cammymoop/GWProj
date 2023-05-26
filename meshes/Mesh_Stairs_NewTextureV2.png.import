@@ -2,13 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckwnff0gpbm22"
+uid="uid://b21nfpxuvrs0i"
 path.s3tc="res://.godot/imported/Mesh_Stairs_NewTextureV2.png-02848dd00b52810250c6e5341ff7396f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 

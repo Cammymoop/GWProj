@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dsj3abk83wlgs"
+uid="uid://ck6rwi6ebfh2n"
 path="res://.godot/imported/Mesh_SpikeSmall.glb-087a541a69c72b1d508e956e53684fd4.scn"
 
 [deps]
@@ -16,7 +16,7 @@ dest_files=["res://.godot/imported/Mesh_SpikeSmall.glb-087a541a69c72b1d508e956e5
 nodes/root_type="Node3D"
 nodes/root_name="Scene Root"
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=0.25
 meshes/ensure_tangents=true
 meshes/generate_lods=true
 meshes/create_shadow_meshes=true

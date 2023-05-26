@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dopce0f61t21x"
+uid="uid://dv2g3mbu02oqb"
 path="res://.godot/imported/Mesh_ArchwayWall.glb-49a238ccefe567540794e4302faf19cc.scn"
 
 [deps]
@@ -16,7 +16,7 @@ dest_files=["res://.godot/imported/Mesh_ArchwayWall.glb-49a238ccefe567540794e430
 nodes/root_type="Node3D"
 nodes/root_name="Scene Root"
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=0.25
 meshes/ensure_tangents=true
 meshes/generate_lods=true
 meshes/create_shadow_meshes=true

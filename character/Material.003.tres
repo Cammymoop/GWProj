@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://iqb16vub1aup"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_w1vm3"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bl0t1"]
+noise = SubResource("FastNoiseLite_w1vm3")
+
+[resource]
+resource_name = "Material.003"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.906332, 0.214558, 0.526002, 1)
+roughness = 0.4
+emission_enabled = true
+normal_texture = SubResource("NoiseTexture2D_bl0t1")
+distance_fade_mode = 2
+distance_fade_max_distance = 1.8

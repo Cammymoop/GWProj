@@ -2,13 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blie56ixa63yy"
+uid="uid://3yw2y77ii67f"
 path.s3tc="res://.godot/imported/Mesh_PlatformLong2_NewTextureV2.png-7eb88efcf08851fc8525e2b3d8def677.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 

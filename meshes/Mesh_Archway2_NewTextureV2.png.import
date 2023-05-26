@@ -2,13 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bid5xe75ktygo"
+uid="uid://d3812lq0nss32"
 path.s3tc="res://.godot/imported/Mesh_Archway2_NewTextureV2.png-34c3f64bb735f8f479fb2c9d14d4f43f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 

@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://blb2pswwpi0q8"
+uid="uid://bhprdwphxh8n4"
 path="res://.godot/imported/Mesh_Archway2.glb-fd7ebd55fb7f52b09149f0cf1fc2d017.scn"
 
 [deps]
@@ -16,7 +16,7 @@ dest_files=["res://.godot/imported/Mesh_Archway2.glb-fd7ebd55fb7f52b09149f0cf1fc
 nodes/root_type="Node3D"
 nodes/root_name="Scene Root"
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=0.25
 meshes/ensure_tangents=true
 meshes/generate_lods=true
 meshes/create_shadow_meshes=true
@@ -28,5 +28,12 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"WallHighContranst": {
+"use_external/enabled": true,
+"use_external/path": "res://meshes/materials/WallHighContranst.tres"
+}
+}
+}
 gltf/embedded_image_handling=1

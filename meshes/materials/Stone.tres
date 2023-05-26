@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bf6h0fc6bg625"]
+
+[ext_resource type="Texture2D" uid="uid://cqvfheqdhuu21" path="res://meshes/normal.png" id="1_psu38"]
+[ext_resource type="Texture2D" uid="uid://bfj4mmqa8euvr" path="res://meshes/rough.png" id="2_q33li"]
+
+[resource]
+resource_name = "Stone"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.906332, 0.796248, 0.596819, 1)
+roughness_texture = ExtResource("2_q33li")
+emission_enabled = true
+normal_enabled = true
+normal_scale = 0.6
+normal_texture = ExtResource("1_psu38")

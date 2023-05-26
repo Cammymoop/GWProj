@@ -9027,13 +9027,29 @@ _subresources={
 }
 },
 "materials": {
+"Material.001": {
+"use_external/enabled": true,
+"use_external/path": "res://character/Material.001.tres"
+},
 "Material.002": {
 "use_external/enabled": true,
 "use_external/path": "res://character/Material.002.tres"
 },
+"Material.003": {
+"use_external/enabled": true,
+"use_external/path": "res://character/Material.003.tres"
+},
+"Material.004": {
+"use_external/enabled": true,
+"use_external/path": "res://character/Material.004.tres"
+},
 "Material.005": {
 "use_external/enabled": true,
 "use_external/path": "res://character/Material.005.tres"
+},
+"Material.006": {
+"use_external/enabled": true,
+"use_external/path": "res://character/Material.006.tres"
 }
 }
 }

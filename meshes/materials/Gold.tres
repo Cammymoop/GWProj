@@ -1,0 +1,26 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://cpolpeq4n76ow"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ykavy"]
+frequency = 0.03
+fractal_gain = 0.25
+domain_warp_fractal_gain = 0.1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vrg3p"]
+seamless = true
+as_normal_map = true
+bump_strength = 0.8
+noise = SubResource("FastNoiseLite_ykavy")
+
+[resource]
+resource_name = "Gold"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.913326, 0.81043, 0.238132, 1)
+metallic = 1.0
+roughness = 0.4
+emission_enabled = true
+normal_enabled = true
+normal_scale = 0.04
+normal_texture = SubResource("NoiseTexture2D_vrg3p")
+uv1_scale = Vector3(0.25, 0.45, 0.325)
+uv1_triplanar = true

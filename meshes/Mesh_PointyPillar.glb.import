@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://fl1i4py3g0p6"
+uid="uid://cdov38br84br8"
 path="res://.godot/imported/Mesh_PointyPillar.glb-f6e011e2a8a3f09538860fc4d2d09b63.scn"
 
 [deps]
@@ -16,7 +16,7 @@ dest_files=["res://.godot/imported/Mesh_PointyPillar.glb-f6e011e2a8a3f09538860fc
 nodes/root_type="Node3D"
 nodes/root_name="Scene Root"
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=0.25
 meshes/ensure_tangents=true
 meshes/generate_lods=true
 meshes/create_shadow_meshes=true

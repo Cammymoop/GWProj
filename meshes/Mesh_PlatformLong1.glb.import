@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cf3xty11coqa2"
+uid="uid://ddkun8og8up2h"
 path="res://.godot/imported/Mesh_PlatformLong1.glb-8d2b64b117552e5808d3d4bbe2e70098.scn"
 
 [deps]
@@ -16,7 +16,7 @@ dest_files=["res://.godot/imported/Mesh_PlatformLong1.glb-8d2b64b117552e5808d3d4
 nodes/root_type="Node3D"
 nodes/root_name="Scene Root"
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=0.25
 meshes/ensure_tangents=true
 meshes/generate_lods=true
 meshes/create_shadow_meshes=true

@@ -10,6 +10,7 @@ sky_material = SubResource("ProceduralSkyMaterial_5as67")
 [sub_resource type="Environment" id="Environment_3x11q"]
 background_mode = 2
 sky = SubResource("Sky_sqljh")
+sdfgi_enabled = true
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_yjdxf"]
 top_radius = 2.0

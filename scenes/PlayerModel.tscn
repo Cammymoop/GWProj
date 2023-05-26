@@ -74,49 +74,49 @@ states/Start/position = Vector2(278, 180)
 "states/Walk 2/position" = Vector2(363, 47)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_08iqf"), "Jump", "Fall", SubResource("AnimationNodeStateMachineTransition_dkyha"), "Fall", "Idle", SubResource("AnimationNodeStateMachineTransition_xn0dv"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_ap3ef"), "Idle", "Walk 2", SubResource("AnimationNodeStateMachineTransition_kos4t"), "Walk 2", "Idle", SubResource("AnimationNodeStateMachineTransition_die7u"), "Walk 2", "Fall", SubResource("AnimationNodeStateMachineTransition_68xka"), "Walk 2", "Jump", SubResource("AnimationNodeStateMachineTransition_p6g1r")]
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_gtt20"]
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_5fgme"]
 
 [node name="ChibiCharacterWithAnimsV17" instance=ExtResource("1_4m5fm")]
 script = ExtResource("2_5cb6y")
 
 [node name="Skeleton3D" parent="MainBody" index="0"]
 bones/0/position = Vector3(-0.0167354, 0.0239394, -0.0715301)
-bones/1/rotation = Quaternion(-0.146159, 0.0610305, -0.0217015, 0.987138)
-bones/3/rotation = Quaternion(-0.0523164, 0.020307, -0.000303954, 0.998424)
-bones/5/rotation = Quaternion(0.0507702, 0.174784, -0.551448, 0.814112)
-bones/6/rotation = Quaternion(0.470116, 2.44964e-08, 1.24041e-05, 0.882605)
-bones/7/rotation = Quaternion(0.0418098, -0.232117, -0.0346953, 0.971169)
+bones/1/rotation = Quaternion(-0.146172, 0.0362283, -0.0157523, 0.98847)
+bones/3/rotation = Quaternion(-0.0502839, -0.00559204, 8.25147e-05, 0.998719)
+bones/5/rotation = Quaternion(0.0331263, 0.153317, -0.558364, 0.814633)
+bones/6/rotation = Quaternion(0.477462, -6.57133e-09, 1.25992e-05, 0.878652)
+bones/7/rotation = Quaternion(0.0272296, -0.231556, -0.0362099, 0.971766)
 bones/9/rotation = Quaternion(-0.010823, -0.00400777, -0.343166, 0.939204)
 bones/10/rotation = Quaternion(0.534513, 0.373297, -0.434141, 0.621665)
-bones/13/rotation = Quaternion(-0.120821, 0.0769418, 0.589811, 0.794736)
-bones/14/rotation = Quaternion(0.433377, 1.10142e-08, -1.14385e-05, 0.901213)
-bones/15/rotation = Quaternion(0.0856135, -0.256028, 0.186631, 0.944611)
+bones/13/rotation = Quaternion(-0.104568, 0.0639781, 0.59242, 0.796248)
+bones/14/rotation = Quaternion(0.426675, 5.98163e-09, -1.1241e-05, 0.904405)
+bones/15/rotation = Quaternion(0.0948828, -0.263661, 0.183855, 0.942166)
 bones/16/rotation = Quaternion(-0.0185842, 0.00439065, 0.229891, 0.973029)
 bones/17/rotation = Quaternion(-0.0111942, 0.00280838, 0.239111, 0.970924)
 bones/18/rotation = Quaternion(0.498726, -0.419912, 0.488358, 0.580045)
 bones/19/rotation = Quaternion(-0.000896654, 0.000629042, 0.574253, 0.818677)
-bones/20/rotation = Quaternion(0.94415, -0.0126538, -0.13952, 0.298253)
+bones/20/rotation = Quaternion(0.947784, -0.00744261, -0.110631, 0.299018)
 bones/21/rotation = Quaternion(0.149119, 1.18206e-07, 1.69981e-08, 0.988819)
-bones/22/rotation = Quaternion(-0.545659, 0.122953, 0.0671447, 0.826215)
-bones/23/rotation = Quaternion(0.96595, -0.0242427, -0.0565996, 0.251294)
+bones/22/rotation = Quaternion(-0.548, 0.0960519, 0.0553943, 0.829097)
+bones/23/rotation = Quaternion(0.967075, -0.0221099, -0.0254986, 0.252242)
 bones/24/rotation = Quaternion(0.217647, 1.14866e-07, 2.44913e-08, 0.976028)
-bones/25/rotation = Quaternion(-0.646702, 0.0611599, 0.00711963, 0.760254)
-bones/27/position = Vector3(1.27308, -0.499367, 0.327279)
+bones/25/rotation = Quaternion(-0.647079, 0.0331178, -0.00649873, 0.761676)
+bones/27/position = Vector3(1.27232, -0.488177, 0.402152)
 bones/27/rotation = Quaternion(0.0356475, 0.351667, 0.934996, 0.0290135)
 bones/28/position = Vector3(-0.575139, 1.40877, -1.29288)
-bones/29/position = Vector3(-1.46334, -0.432958, 0.67581)
+bones/29/position = Vector3(-1.46196, -0.447587, 0.614871)
 bones/29/rotation = Quaternion(0.327944, 0.354136, 0.871569, 0.0860677)
 bones/30/position = Vector3(-0.569045, -1.85403, 0.114682)
 bones/31/position = Vector3(0.506058, -1.83534, -0.178216)
-bones/32/position = Vector3(-0.909607, -1.05786, -1.07605)
-bones/33/position = Vector3(0.423375, -1.00376, -1.10852)
-bones/34/position = Vector3(0.632428, 2.03153, 3.89718)
+bones/32/position = Vector3(-0.840116, -1.06354, -1.07748)
+bones/33/position = Vector3(0.485735, -0.995496, -1.09804)
+bones/34/position = Vector3(0.258842, 2.01963, 3.94539)
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="2"]
 tree_root = SubResource("AnimationNodeStateMachine_4xn5a")
 anim_player = NodePath("../AnimationPlayer")
 advance_expression_base_node = NodePath("..")
 active = true
-parameters/playback = SubResource("AnimationNodeStateMachinePlayback_gtt20")
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_5fgme")
 parameters/conditions/jump = false
 "parameters/Walk 2/TimeScale/scale" = 1.7

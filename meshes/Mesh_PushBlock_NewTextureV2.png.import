@@ -2,13 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://swlxt8l0xdhg"
+uid="uid://d30hcil8d17k1"
 path.s3tc="res://.godot/imported/Mesh_PushBlock_NewTextureV2.png-2f670b864fe14ba31216405fe9498c56.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 

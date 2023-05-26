@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhaqqw780qk3a"]
+
+[ext_resource type="PackedScene" uid="uid://b1mtl2kja5fpg" path="res://meshes/Mesh_Platform2.glb" id="1_ilxa1"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lev8b"]
+points = PackedVector3Array(-2.3435, 0.000207961, -3.54999, -3.54999, 0.000207961, -2.3435, -2.3435, 1.75021, -3.54999, 3.54999, 0.000207961, -3.54999, -3.54999, 0.000207961, 2.3428, -3.54999, 1.75021, -2.3435, 3.54999, 1.75021, -3.54999, 3.54999, 0.000207961, 3.54999, -3.54999, 1.75021, 2.3428, -2.3435, 0.000207961, 3.54999, 3.54999, 1.75021, 3.54999, -2.3435, 1.75021, 3.54999)
+
+[node name="PlatformB" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4772, -1.86648, -0.608829)
+
+[node name="Mesh_Platform2" parent="." instance=ExtResource("1_ilxa1")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_mask = 17
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_lev8b")

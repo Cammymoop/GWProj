@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://en7ga35a4xhx"
+uid="uid://diludm5fhitdu"
 path="res://.godot/imported/Mesh_PushBlockPlatform.glb-ee8a75a390244cd59cad736d4ccfe90e.scn"
 
 [deps]
@@ -16,7 +16,7 @@ dest_files=["res://.godot/imported/Mesh_PushBlockPlatform.glb-ee8a75a390244cd59c
 nodes/root_type="Node3D"
 nodes/root_name="Scene Root"
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=0.25
 meshes/ensure_tangents=true
 meshes/generate_lods=true
 meshes/create_shadow_meshes=true

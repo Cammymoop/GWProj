@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://idwu0hbd0pfe"
+uid="uid://c0lo5y4e5cxbk"
 path="res://.godot/imported/Mesh_GoldPile.glb-983742fbba5e32cc7283320c836b63a0.scn"
 
 [deps]
@@ -16,7 +16,7 @@ dest_files=["res://.godot/imported/Mesh_GoldPile.glb-983742fbba5e32cc7283320c836
 nodes/root_type="Node3D"
 nodes/root_name="Scene Root"
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=0.25
 meshes/ensure_tangents=true
 meshes/generate_lods=true
 meshes/create_shadow_meshes=true
