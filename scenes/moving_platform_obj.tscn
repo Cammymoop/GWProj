@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cuokxwujesdvs"]
+
+[ext_resource type="Script" path="res://scenes/MovingPlatform.gd" id="1_l62sj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_yfoog"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_powwn"]
+size = Vector3(1.49882, 0.507001, 1.50789)
+
+[node name="MovingPlatform" type="Node3D"]
+script = ExtResource("1_l62sj")
+travelTime = 5.0
+delay = 2.0
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+gravity_scale = 0.0
+lock_rotation = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(1.5, 0, 0, 0, 0.5, 0, 0, 0, 1.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_yfoog")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("BoxShape3D_powwn")
