@@ -28,5 +28,16 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"WallHighContranst.001": {
+"use_external/enabled": true,
+"use_external/path": "res://meshes/materials/WallHighContranst.001.tres"
+},
+"Wood": {
+"use_external/enabled": true,
+"use_external/path": "res://meshes/materials/Wood.tres"
+}
+}
+}
 gltf/embedded_image_handling=1

@@ -10,8 +10,10 @@ var controller_look_sensitivity = 12
 var floored: = false
 
 @export var movement_force: = .6
-
 @export var vel_limit = 5.0
+
+@export var jump_upwards: = 8.0
+@export var jump_forwards: = 6.0
 
 func _ready():
 	randomize()
@@ -44,7 +46,7 @@ func camera_look(delta: Vector2, sensitivity) -> void:
 
 func _physics_process(_delta):
 	floored = len($FloorDetector.get_overlapping_bodies()) > 0
-	$ChibiCharacterWithAnimsV17.on_floor = floored
+	$Model.on_floor = floored
 
 func _integrate_forces(state: PhysicsDirectBodyState3D):
 	var forward_vec = -camera_pivot.transform.basis.z
@@ -88,13 +90,16 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 		move_vec += left_vec * lr
 	
 	# need to add drag for if the player is not inputting movement
-	if abs(fb) < 0.1 and abs(lr) < 0.1:
+	if floored and abs(fb) < 0.1 and abs(lr) < 0.1:
 		var lv: = state.linear_velocity
 		state.linear_velocity = lv.lerp(Vector3(0, lv.y, 0), 0.1)
+	
+	if Input.is_action_just_pressed("jump") and floored:
+		state.linear_velocity.y += 8
+		state.linear_velocity -= transform.basis.z.normalized() * jump_forwards
+		$Model.play("Jump")
 		
 	if move_vec:
 		var rotated = global_transform.looking_at(global_position + move_vec).orthonormalized().basis
 		state.transform.basis = global_transform.basis.slerp(rotated, 0.2)
-	#$ChibiCharacterWithAnimsV17/AnimationTree.set("parameters/conditions/walk", move_vec != Vector3.ZERO)
-	#$ChibiCharacterWithAnimsV17/AnimationTree.set("parameters/conditions/idle", move_vec == Vector3.ZERO)
-	$ChibiCharacterWithAnimsV17.moving = true if move_vec else false
+	$Model.moving = true if move_vec else false

@@ -1,0 +1,102 @@
+[gd_scene load_steps=8 format=3 uid="uid://d3m7edhlthejf"]
+
+[ext_resource type="Script" path="res://src/Player.gd" id="1_bnkpy"]
+[ext_resource type="PackedScene" uid="uid://cxtoq7wxlwf1t" path="res://scenes/PlayerModel.tscn" id="2_yaahn"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lwymd"]
+height = 1.84876
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_srbr1"]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_qdfyx"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mbsen"]
+radius = 0.1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_atitj"]
+radius = 0.454462
+
+[node name="Player" type="RigidBody3D"]
+collision_layer = 2
+mass = 20.0
+max_contacts_reported = 3
+contact_monitor = true
+can_sleep = false
+lock_rotation = true
+script = ExtResource("1_bnkpy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_lwymd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("CapsuleMesh_srbr1")
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="."]
+remote_path = NodePath("../Node/Center")
+update_rotation = false
+update_scale = false
+
+[node name="ChibiCharacterWithAnimsV17" parent="." instance=ExtResource("2_yaahn")]
+transform = Transform3D(-0.25, 0, -2.18557e-08, 0, 0.25, 0, 2.18557e-08, 0, -0.25, 0.0108134, -0.92448, 0.0420987)
+
+[node name="Skeleton3D" parent="ChibiCharacterWithAnimsV17/MainBody" index="0"]
+bones/0/position = Vector3(-0.0167354, 0.0239394, -0.0715301)
+bones/1/rotation = Quaternion(-0.145761, -0.0311724, 0.000441802, 0.988829)
+bones/3/rotation = Quaternion(-0.0481585, -0.0320793, 0.000477762, 0.998324)
+bones/5/rotation = Quaternion(0.00467128, 0.0815872, -0.571793, 0.816317)
+bones/6/rotation = Quaternion(0.440134, -4.09006e-09, 1.16011e-05, 0.897932)
+bones/7/rotation = Quaternion(0.0272087, -0.232365, -0.0517721, 0.970869)
+bones/9/rotation = Quaternion(-0.010823, -0.00400777, -0.343166, 0.939204)
+bones/10/rotation = Quaternion(0.534513, 0.373297, -0.434141, 0.621665)
+bones/13/rotation = Quaternion(-0.0592909, 0.0276007, 0.589741, 0.80494)
+bones/14/rotation = Quaternion(0.433445, 5.92365e-09, -1.14297e-05, 0.90118)
+bones/15/rotation = Quaternion(0.0944848, -0.270356, 0.188873, 0.939312)
+bones/16/rotation = Quaternion(-0.0185842, 0.00439065, 0.229891, 0.973029)
+bones/17/rotation = Quaternion(-0.0111942, 0.00280838, 0.239111, 0.970924)
+bones/18/rotation = Quaternion(0.498726, -0.419912, 0.488358, 0.580045)
+bones/19/rotation = Quaternion(-0.000896654, 0.000629042, 0.574253, 0.818677)
+bones/20/rotation = Quaternion(0.953986, 0.0138587, 0.00808676, 0.299421)
+bones/21/rotation = Quaternion(0.149119, 1.18206e-07, 1.69981e-08, 0.988819)
+bones/22/rotation = Quaternion(-0.552565, -0.014425, 0.00701575, 0.833316)
+bones/23/rotation = Quaternion(0.96506, -0.0158616, 0.064002, 0.253598)
+bones/24/rotation = Quaternion(0.217647, 1.14866e-07, 2.44913e-08, 0.976028)
+bones/25/rotation = Quaternion(-0.644651, -0.0476194, -0.0455854, 0.76163)
+bones/27/position = Vector3(1.28997, -0.50775, 0.614187)
+bones/27/rotation = Quaternion(0.0356475, 0.351667, 0.934996, 0.0290135)
+bones/28/position = Vector3(-0.575139, 1.40877, -1.29288)
+bones/29/position = Vector3(-1.47422, -0.444352, 0.487223)
+bones/29/rotation = Quaternion(0.327944, 0.354136, 0.871569, 0.0860677)
+bones/30/position = Vector3(-0.569045, -1.85403, 0.114682)
+bones/31/position = Vector3(0.506058, -1.83534, -0.178216)
+bones/32/position = Vector3(-0.566727, -1.09216, -1.11017)
+bones/33/position = Vector3(0.657198, -1.05702, -1.09869)
+bones/34/position = Vector3(-0.423052, 2.02614, 3.7046)
+
+[node name="Cube026" parent="ChibiCharacterWithAnimsV17/MainBody/Skeleton3D" index="0"]
+gi_mode = 2
+
+[node name="AnimationTree" parent="ChibiCharacterWithAnimsV17" index="2"]
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_qdfyx")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Center" type="Marker3D" parent="Node"]
+
+[node name="CameraFocus" type="Marker3D" parent="Node/Center"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.368549, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Node/Center/CameraFocus"]
+collision_mask = 16
+shape = SubResource("SphereShape3D_mbsen")
+spring_length = 5.0
+
+[node name="Camera3D" type="Camera3D" parent="Node/Center/CameraFocus/SpringArm3D"]
+
+[node name="FloorDetector" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorDetector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.502985, 0)
+shape = SubResource("SphereShape3D_atitj")
+
+[editable path="ChibiCharacterWithAnimsV17"]

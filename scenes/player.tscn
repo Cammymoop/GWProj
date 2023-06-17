@@ -1,14 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://d3m7edhlthejf"]
+[gd_scene load_steps=8 format=3 uid="uid://ddq0a2k7ustx8"]
 
-[ext_resource type="Script" path="res://src/Player.gd" id="1_bnkpy"]
-[ext_resource type="PackedScene" uid="uid://cxtoq7wxlwf1t" path="res://scenes/PlayerModel.tscn" id="2_yaahn"]
+[ext_resource type="Script" path="res://src/Player.gd" id="1_n8t68"]
+[ext_resource type="PackedScene" uid="uid://cfte47iv6vkal" path="res://character/char_v2.0.tscn" id="2_4in74"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rmdq1"]
+friction = 0.55
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lwymd"]
 height = 1.84876
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_srbr1"]
-
-[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_qdfyx"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mbsen"]
 radius = 0.1
@@ -18,12 +19,14 @@ radius = 0.454462
 
 [node name="Player" type="RigidBody3D"]
 collision_layer = 2
+collision_mask = 3
 mass = 20.0
+physics_material_override = SubResource("PhysicsMaterial_rmdq1")
 max_contacts_reported = 3
 contact_monitor = true
 can_sleep = false
 lock_rotation = true
-script = ExtResource("1_bnkpy")
+script = ExtResource("1_n8t68")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_lwymd")
@@ -37,33 +40,8 @@ remote_path = NodePath("../Node/Center")
 update_rotation = false
 update_scale = false
 
-[node name="ChibiCharacterWithAnimsV17" parent="." instance=ExtResource("2_yaahn")]
-transform = Transform3D(-0.25, 0, -2.18557e-08, 0, 0.25, 0, 2.18557e-08, 0, -0.25, 0.0108134, -0.92448, 0.0420987)
-
-[node name="Skeleton3D" parent="ChibiCharacterWithAnimsV17/MainBody" index="0"]
-bones/1/rotation = Quaternion(-0.146178, 0.0436316, -0.0175287, 0.98814)
-bones/3/rotation = Quaternion(-0.0508521, -0.000924053, 1.28577e-05, 0.998706)
-bones/5/rotation = Quaternion(0.0374159, 0.160324, -0.556215, 0.814568)
-bones/6/rotation = Quaternion(0.477656, -7.86628e-09, 1.26087e-05, 0.878547)
-bones/7/rotation = Quaternion(0.0296467, -0.231737, -0.0353665, 0.971683)
-bones/13/rotation = Quaternion(-0.10906, 0.0681406, 0.591957, 0.795645)
-bones/14/rotation = Quaternion(0.426808, 5.14257e-09, -1.12434e-05, 0.904342)
-bones/15/rotation = Quaternion(0.093764, -0.26203, 0.183996, 0.942706)
-bones/20/rotation = Quaternion(0.946633, -0.00922805, -0.120535, 0.298785)
-bones/22/rotation = Quaternion(-0.547252, 0.105274, 0.059424, 0.828192)
-bones/23/rotation = Quaternion(0.966831, -0.022765, -0.0350201, 0.251978)
-bones/25/rotation = Quaternion(-0.64703, 0.0417038, -0.00233135, 0.76132)
-bones/27/position = Vector3(1.27202, -0.488724, 0.379551)
-bones/29/position = Vector3(-1.46192, -0.44582, 0.63183)
-bones/32/position = Vector3(-0.86354, -1.06142, -1.0763)
-bones/33/position = Vector3(0.467075, -0.995409, -1.0995)
-bones/34/position = Vector3(0.350828, 2.02187, 3.95459)
-
-[node name="Cube026" parent="ChibiCharacterWithAnimsV17/MainBody/Skeleton3D" index="0"]
-gi_mode = 2
-
-[node name="AnimationTree" parent="ChibiCharacterWithAnimsV17" index="2"]
-parameters/playback = SubResource("AnimationNodeStateMachinePlayback_qdfyx")
+[node name="Model" parent="." instance=ExtResource("2_4in74")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.18, -0.924, 0)
 
 [node name="Node" type="Node" parent="."]
 
@@ -84,5 +62,3 @@ spring_length = 5.0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FloorDetector"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.502985, 0)
 shape = SubResource("SphereShape3D_atitj")
-
-[editable path="ChibiCharacterWithAnimsV17"]
