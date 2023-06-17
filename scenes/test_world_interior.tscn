@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://cc0k7td14ywdr"]
+[gd_scene load_steps=42 format=3 uid="uid://cc0k7td14ywdr"]
 
 [ext_resource type="Script" path="res://src/torchlight.gd" id="2_jon7h"]
 [ext_resource type="Material" uid="uid://bf6h0fc6bg625" path="res://meshes/materials/Stone.tres" id="2_xqwiu"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cuokxwujesdvs" path="res://scenes/moving_platform_obj.tscn" id="8_dgtfo"]
 [ext_resource type="VoxelGIData" uid="uid://c0utbxn1aicgl" path="res://baked/test_world_interior_voxel_gi_data.res" id="8_pp6m6"]
 [ext_resource type="PackedScene" uid="uid://ddq0a2k7ustx8" path="res://scenes/player.tscn" id="8_sm74i"]
+[ext_resource type="Script" path="res://src/the_voxel_gi_doesnt_want_to_start_working.gd" id="8_uvhrs"]
 [ext_resource type="PackedScene" uid="uid://csm3xijn7cq8x" path="res://scenes/LevelElements/pressure_plate.tscn" id="9_pw4mx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5as67"]
@@ -34,6 +35,7 @@ sdfgi_min_cell_size = 0.176978
 sdfgi_cascade0_distance = 11.3266
 sdfgi_max_distance = 724.9
 sdfgi_y_scale = 2
+volumetric_fog_enabled = true
 volumetric_fog_density = 0.022
 volumetric_fog_albedo = Color(1, 0.972549, 0.635294, 1)
 volumetric_fog_length = 120.89
@@ -324,6 +326,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.54506, 5.69153, -1.36467)
 [node name="VoxelGI" type="VoxelGI" parent="."]
 size = Vector3(34.8379, 33.5485, 35.3512)
 data = ExtResource("8_pp6m6")
+script = ExtResource("8_uvhrs")
+
+[node name="Timer" type="Timer" parent="VoxelGI"]
+wait_time = 4.0
+one_shot = true
 
 [node name="FogVolume" type="FogVolume" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.26565, -1.43403, -0.645203)
@@ -355,3 +362,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.56253, 0.840967, 4.50399)
 
 [node name="PressurePlate" parent="." instance=ExtResource("9_pw4mx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.86927, -2.37829)
+
+[connection signal="timeout" from="VoxelGI/Timer" to="VoxelGI" method="_on_timer_timeout"]
