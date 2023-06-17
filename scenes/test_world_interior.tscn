@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://cc0k7td14ywdr"]
+[gd_scene load_steps=41 format=3 uid="uid://cc0k7td14ywdr"]
 
 [ext_resource type="Script" path="res://src/torchlight.gd" id="2_jon7h"]
 [ext_resource type="Material" uid="uid://bf6h0fc6bg625" path="res://meshes/materials/Stone.tres" id="2_xqwiu"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://crovn5k6jceyn" path="res://scenes/LevelElements/platform_a.tscn" id="5_hg1lc"]
 [ext_resource type="PackedScene" uid="uid://bwasa1hkbb8sn" path="res://scenes/LevelElements/push_block.tscn" id="6_1luqw"]
 [ext_resource type="PackedScene" uid="uid://dhaqqw780qk3a" path="res://scenes/LevelElements/platform_b.tscn" id="6_nnb5m"]
-[ext_resource type="PackedScene" uid="uid://c1db11662jp0d" path="res://meshes/Mesh_PushBlock.glb" id="7_duh2u"]
 [ext_resource type="PackedScene" uid="uid://cuokxwujesdvs" path="res://scenes/moving_platform_obj.tscn" id="8_dgtfo"]
 [ext_resource type="VoxelGIData" uid="uid://c0utbxn1aicgl" path="res://baked/test_world_interior_voxel_gi_data.res" id="8_pp6m6"]
 [ext_resource type="PackedScene" uid="uid://ddq0a2k7ustx8" path="res://scenes/player.tscn" id="8_sm74i"]
@@ -311,8 +310,11 @@ shape = SubResource("ConcavePolygonShape3D_b5usb")
 [node name="PlatformA" parent="." instance=ExtResource("5_hg1lc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12249, -1.8665, 5.99984)
 
-[node name="PlatformA2" parent="." instance=ExtResource("5_hg1lc")]
-transform = Transform3D(0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, -5.30123, -3.60839, 5.99984)
+[node name="Node3D" type="Marker3D" parent="."]
+transform = Transform3D(0.936519, -0.350616, 0, 0.350616, 0.936519, 0, 0, 0, 1, -2.79584, -0.09742, 5.99984)
+
+[node name="PlatformA2" parent="Node3D" instance=ExtResource("5_hg1lc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.92522, -1.78789, 0)
 
 [node name="PlatformB" parent="." instance=ExtResource("6_nnb5m")]
 
