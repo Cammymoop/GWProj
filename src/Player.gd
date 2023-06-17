@@ -15,6 +15,8 @@ var floored: = false
 @export var jump_upwards: = 8.0
 @export var jump_forwards: = 6.0
 
+var platform_push: Vector3 = Vector3.ZERO
+
 func _ready():
 	randomize()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -45,8 +47,19 @@ func camera_look(delta: Vector2, sensitivity) -> void:
 	
 
 func _physics_process(_delta):
-	floored = len($FloorDetector.get_overlapping_bodies()) > 0
+	var bodies = $FloorDetector.get_overlapping_bodies()
+	floored = len(bodies) > 0
 	$Model.on_floor = floored
+	
+	platform_push = Vector3.ZERO
+	if floored:
+		var touching_bodies = get_colliding_bodies()
+		for b in bodies:
+			if b not in touching_bodies:
+				continue
+			if b.has_method("get_delta_motion"):
+				platform_push = b.get_delta_motion()
+				break
 
 func _integrate_forces(state: PhysicsDirectBodyState3D):
 	var forward_vec = -camera_pivot.transform.basis.z
@@ -89,10 +102,13 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 		state.linear_velocity += left_vec * lr * effective_force
 		move_vec += left_vec * lr
 	
+	state.linear_velocity += platform_push
+	
 	# need to add drag for if the player is not inputting movement
 	if floored and abs(fb) < 0.1 and abs(lr) < 0.1:
 		var lv: = state.linear_velocity
-		state.linear_velocity = lv.lerp(Vector3(0, lv.y, 0), 0.1)
+		var relative_vel: = lv - platform_push
+		state.linear_velocity = relative_vel.lerp(Vector3(0, lv.y, 0), 0.1) + platform_push
 	
 	if Input.is_action_just_pressed("jump") and floored:
 		state.linear_velocity.y += 8

@@ -1,4 +1,5 @@
 extends Node3D
+signal state_changed(on: bool)
 
 var on: = false
 
@@ -14,8 +15,10 @@ func _process(_delta):
 func _on_debounce_on_timeout():
 	#print("Now on")
 	on = true
+	state_changed.emit(true)
 
 
 func _on_debounce_off_timeout():
 	#print("Now off")
 	on = false
+	state_changed.emit(false)
