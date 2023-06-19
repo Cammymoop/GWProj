@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ddq0a2k7ustx8"]
+[gd_scene load_steps=9 format=3 uid="uid://ddq0a2k7ustx8"]
 
 [ext_resource type="Script" path="res://src/Player.gd" id="1_n8t68"]
 [ext_resource type="PackedScene" uid="uid://cfte47iv6vkal" path="res://character/char_v2.0.tscn" id="2_4in74"]
+[ext_resource type="PackedScene" uid="uid://bclg6cbbrrjsr" path="res://scenes/grapple_target_ring.tscn" id="3_33xar"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rmdq1"]
 friction = 0.55
@@ -26,6 +27,7 @@ max_contacts_reported = 10
 contact_monitor = true
 can_sleep = false
 lock_rotation = true
+freeze_mode = 1
 script = ExtResource("1_n8t68")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -47,18 +49,26 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.18, 
 
 [node name="Center" type="Marker3D" parent="Node"]
 
-[node name="CameraFocus" type="Marker3D" parent="Node/Center"]
+[node name="CameraHorizontalPivot" type="Marker3D" parent="Node/Center"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.368549, 0)
 
-[node name="SpringArm3D" type="SpringArm3D" parent="Node/Center/CameraFocus"]
+[node name="CameraUpDown" type="Node3D" parent="Node/Center/CameraHorizontalPivot"]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Node/Center/CameraHorizontalPivot/CameraUpDown"]
 collision_mask = 16
 shape = SubResource("SphereShape3D_mbsen")
 spring_length = 5.0
 
-[node name="Camera3D" type="Camera3D" parent="Node/Center/CameraFocus/SpringArm3D"]
+[node name="Camera3D" type="Camera3D" parent="Node/Center/CameraHorizontalPivot/CameraUpDown/SpringArm3D"]
+
+[node name="LookRayCast" type="RayCast3D" parent="Node/Center/CameraHorizontalPivot/CameraUpDown"]
+visible = false
+target_position = Vector3(0, 0, -300)
 
 [node name="FloorDetector" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FloorDetector"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.502985, 0)
 shape = SubResource("SphereShape3D_atitj")
+
+[node name="GrappleTargetRing" parent="." instance=ExtResource("3_33xar")]

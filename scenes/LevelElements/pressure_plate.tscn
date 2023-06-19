@@ -65,7 +65,6 @@ script = ExtResource("1_q65bg")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0409858, 0)
-collision_layer = 3
 collision_mask = 2
 mass = 8.0
 physics_material_override = SubResource("PhysicsMaterial_ntv65")

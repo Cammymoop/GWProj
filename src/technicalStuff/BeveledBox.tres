@@ -1,0 +1,8 @@
+[gd_resource type="ConvexPolygonShape3D" load_steps=2 format=3 uid="uid://cyd5k0j0ai082"]
+
+[ext_resource type="Script" path="res://src/technicalStuff/beveled_box.gd" id="1_ti6g7"]
+
+[resource]
+script = ExtResource("1_ti6g7")
+size = Vector3(1.8, 2, 1.8)
+bevel_amount = 0.2

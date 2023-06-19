@@ -18,6 +18,8 @@ var last_activator: Node = null
 
 @export var end_position_node: NodePath
 
+@export var always_active: bool = false
+
 var moving_forward: = true
 var looping: = false
 var start_position : Vector3
@@ -50,12 +52,16 @@ func _ready():
 	if activation_mode == ActivationMode.TOGGLE_DESTINATION:
 		moving_forward = false
 
+	if always_active:
+		active = true
+		activation_mode = ActivationMode.CONTINUOUS_LOOP
+		looping = true
+	elif activator:
+		set_new_activator(get_node(activator))
+
 	total_time = travelTime
 	if looping:
 		total_time = (total_time + delay) * 2
-
-	if activator:
-		set_new_activator(get_node(activator))
 
 func set_new_activator(new_activator: Node) -> void:
 	if new_activator == null:
@@ -69,6 +75,8 @@ func set_new_activator(new_activator: Node) -> void:
 	new_activator.connect("state_changed", do_activate)
 
 func do_activate(new_on_state: bool) -> void:
+	# prevent race condition where platforms would stop on hitting the end on the same frame they were supposed to reverse
+	await get_tree().process_frame
 	match activation_mode:
 		ActivationMode.CONTINUOUS_ONE_WAY, ActivationMode.CONTINUOUS_LOOP:
 			active = new_on_state
@@ -85,7 +93,6 @@ func do_activate(new_on_state: bool) -> void:
 		ActivationMode.NO_TAKEBACKS:
 			if new_on_state:
 				active = true
-
 
 func _process(delta):
 	if not active:

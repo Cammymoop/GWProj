@@ -1,8 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://cuokxwujesdvs"]
+[gd_scene load_steps=8 format=3 uid="uid://cuokxwujesdvs"]
 
 [ext_resource type="Script" path="res://src/MovingPlatform.gd" id="1_dmk4x"]
+[ext_resource type="Texture2D" uid="uid://d4nr6xdbyaujl" path="res://meshes/materials/stone_lines_texture.png" id="2_ktoas"]
+[ext_resource type="Texture2D" uid="uid://cqvfheqdhuu21" path="res://meshes/normal.png" id="3_2ga8d"]
+[ext_resource type="Texture2D" uid="uid://bfj4mmqa8euvr" path="res://meshes/rough.png" id="4_oy8er"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_yfoog"]
+size = Vector3(1.5, 0.5, 1.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p28nc"]
+resource_name = "WallHighContranst"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_ktoas")
+roughness_texture = ExtResource("4_oy8er")
+emission_enabled = true
+normal_enabled = true
+normal_scale = 0.3
+normal_texture = ExtResource("3_2ga8d")
+uv1_scale = Vector3(0.125, 0.125, 0.125)
+uv1_offset = Vector3(0, 0.07, 0.04)
+uv1_triplanar = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_powwn"]
 size = Vector3(1.49882, 0.507001, 1.50789)
@@ -17,9 +35,8 @@ travelTime = 5.0
 delay = 2.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.5, 0, 0, 0, 0.5, 0, 0, 0, 1.5, 0, 0, 0)
 mesh = SubResource("BoxMesh_yfoog")
-skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_p28nc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_powwn")
