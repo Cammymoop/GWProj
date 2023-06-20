@@ -11,9 +11,17 @@ const JUMP_MIN: = 5
 
 func play(anim: String) -> void:
 	if anim_tree.has_node(anim):
-		anim_state_machine.travel(anim)
+		var to_node: = anim
+		if anim_state_machine.get_fading_from_node() == anim:
+			if anim_tree.has_node(anim + "Alt"):
+				#to_node = anim + "Alt"
+				print(anim_state_machine.get_current_node())
+		anim_state_machine.travel(to_node)
 		if anim == "Jump":
 			jump_frames = JUMP_MIN
+
+func get_playing_anim() -> String:
+	return anim_state_machine.get_current_node()
 
 func _process(_delta):
 	if jump_frames > 0:

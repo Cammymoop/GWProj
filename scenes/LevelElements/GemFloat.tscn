@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7xolgjdlfxoe"]
+[gd_scene load_steps=4 format=3 uid="uid://hkbdom38hbbl"]
 
 [ext_resource type="Script" path="res://GemFloat.gd" id="1_qklyf"]
 [ext_resource type="PackedScene" uid="uid://dier0b21mqbf1" path="res://meshes/Mesh_Gem.glb" id="2_fusli"]

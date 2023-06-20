@@ -61,13 +61,14 @@ func _process(_delta):
 		look_ray_cast.force_raycast_update()
 		if look_ray_cast.get_collision_point():
 			target_ring.global_position = look_ray_cast.get_collision_point()
-			var normal: Vector3 = look_ray_cast.get_collision_normal()
+			var normal: Vector3 = look_ray_cast.get_collision_normal().normalized()
 			if normal == Vector3.UP:
 				target_ring.transform.basis = Basis.IDENTITY
 			elif normal * -1 == Vector3.UP:
 				target_ring.transform.basis = Basis.FLIP_Y
 			else:
-				target_ring.transform.basis = Basis(normal.cross(Vector3.UP), normal, normal.cross(normal.cross(Vector3.UP)))
+				var x_axis = normal.cross(Vector3.UP).normalized()
+				target_ring.transform.basis = Basis(x_axis, normal, normal.cross(x_axis))
 
 
 func _unhandled_input(event):
