@@ -13,7 +13,7 @@ var floored: = false
 @export var vel_limit = 5.0
 
 @export var jump_upwards: = 8.0
-@export var jump_forwards: = 6.0
+@export var jump_forwards: = 4.0
 
 @onready var camera_spring_arm = camera_pivot.find_child("SpringArm3D", true)
 @onready var initial_camera_spring_length = camera_spring_arm.spring_length
