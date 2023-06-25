@@ -14,7 +14,7 @@ config/name="GWProj"
 config/description="No Description"
 run/main_scene="res://scenes/test_world_one.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://icon.png"
 
 [filesystem]
 

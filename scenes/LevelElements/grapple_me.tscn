@@ -15,5 +15,4 @@ surface_material_override/0 = ExtResource("2_f67x2")
 collision_layer = 21
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube035/StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_6nqmh")
