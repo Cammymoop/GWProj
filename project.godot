@@ -138,6 +138,7 @@ grapple_cancel={
 
 3d_physics/layer_1="solid"
 3d_physics/layer_2="player/block"
+3d_physics/layer_3="grappleable"
 3d_physics/layer_5="camera"
 3d_physics/layer_9="floor"
 

@@ -1559,6 +1559,16 @@ tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/keys = PackedFloat32Array(0, 1, -0.000896654, 0.000629042, 0.574253, 0.818677)
 
+[sub_resource type="Animation" id="Animation_g677i"]
+resource_name = "RESET"
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainBody002")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.1962, 0.576249, -0.0176085)
+
 [sub_resource type="Animation" id="Animation_4sls0"]
 resource_name = "Tpose"
 length = 0.0416667
@@ -2099,16 +2109,6 @@ tracks/37/path = NodePath("MainBody002/Skeleton3D:thumb2.R")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/keys = PackedFloat32Array(0, 1, -0.000896654, 0.000629042, 0.574253, 0.818677)
-
-[sub_resource type="Animation" id="Animation_g677i"]
-resource_name = "RESET"
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MainBody002")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0.1962, 0.576249, -0.0176085)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pdgxc"]
 _data = {

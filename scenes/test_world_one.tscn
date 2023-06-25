@@ -1,29 +1,29 @@
-[gd_scene load_steps=64 format=3 uid="uid://x30yxryr5fao"]
+[gd_scene load_steps=64 format=3 uid="uid://cdrmvxnxds42k"]
 
 [ext_resource type="Material" uid="uid://bf6h0fc6bg625" path="res://meshes/materials/Stone.tres" id="1_e8no1"]
 [ext_resource type="Material" uid="uid://l6csymeu2gyn" path="res://meshes/materials/WallHighContranstTriplanar.tres" id="2_i2mh8"]
 [ext_resource type="PackedScene" uid="uid://crovn5k6jceyn" path="res://scenes/LevelElements/platform_a.tscn" id="3_f071d"]
 [ext_resource type="PackedScene" uid="uid://dhaqqw780qk3a" path="res://scenes/LevelElements/platform_b.tscn" id="4_bmu5d"]
+[ext_resource type="VoxelGIData" uid="uid://c3oitolpdqswx" path="res://baked/test_world_1_gi.res" id="5_13avf"]
 [ext_resource type="PackedScene" uid="uid://bwasa1hkbb8sn" path="res://scenes/LevelElements/push_block.tscn" id="5_n8syk"]
-[ext_resource type="VoxelGIData" uid="uid://c0utbxn1aicgl" path="res://baked/test_world_interior_voxel_gi_data.res" id="6_iajlw"]
 [ext_resource type="Script" path="res://src/the_voxel_gi_doesnt_want_to_start_working.gd" id="7_px0nx"]
 [ext_resource type="PackedScene" uid="uid://cuokxwujesdvs" path="res://scenes/LevelElements/moving_platform_obj.tscn" id="8_54e6k"]
 [ext_resource type="PackedScene" uid="uid://ddq0a2k7ustx8" path="res://scenes/player.tscn" id="9_ee562"]
 [ext_resource type="PackedScene" uid="uid://csm3xijn7cq8x" path="res://scenes/LevelElements/pressure_plate.tscn" id="10_ijcqf"]
-[ext_resource type="PackedScene" uid="uid://djfbtjirbp2f7" path="res://scenes/LevelElements/platform_long_1.tscn" id="12_i4ajj"]
-[ext_resource type="PackedScene" uid="uid://6jwml3vmpcdw" path="res://scenes/LevelElements/moving_platform_wide.tscn" id="12_s67xl"]
-[ext_resource type="PackedScene" uid="uid://cbp0safwr4nwo" path="res://scenes/LevelElements/archway_fancy.tscn" id="13_7x7d7"]
+[ext_resource type="PackedScene" path="res://scenes/LevelElements/platform_long_1.tscn" id="12_i4ajj"]
+[ext_resource type="PackedScene" path="res://scenes/LevelElements/moving_platform_wide.tscn" id="12_s67xl"]
+[ext_resource type="PackedScene" path="res://scenes/LevelElements/archway_fancy.tscn" id="13_7x7d7"]
 [ext_resource type="PackedScene" uid="uid://pxsm5615eble" path="res://meshes/Mesh_Torch.glb" id="13_jf7on"]
-[ext_resource type="PackedScene" uid="uid://bo8ls5m2p10gf" path="res://scenes/LevelElements/archway_wall.tscn" id="14_fk16g"]
-[ext_resource type="PackedScene" uid="uid://gqrutr37mpja" path="res://scenes/LevelElements/platform_long_squared.tscn" id="15_o55qm"]
-[ext_resource type="PackedScene" uid="uid://b2yqkwxprrv3g" path="res://scenes/LevelElements/moving_platform_big.tscn" id="16_h6ooa"]
-[ext_resource type="PackedScene" uid="uid://vb2ksw7the2q" path="res://scenes/LevelElements/platform_corner_big.tscn" id="18_virjx"]
-[ext_resource type="PackedScene" uid="uid://dra3hk2ktp4wh" path="res://scenes/LevelElements/pot_open.tscn" id="19_b5n1p"]
+[ext_resource type="PackedScene" path="res://scenes/LevelElements/archway_wall.tscn" id="14_fk16g"]
+[ext_resource type="PackedScene" path="res://scenes/LevelElements/platform_long_squared.tscn" id="15_o55qm"]
+[ext_resource type="PackedScene" path="res://scenes/LevelElements/moving_platform_big.tscn" id="16_h6ooa"]
+[ext_resource type="PackedScene" path="res://scenes/LevelElements/platform_corner_big.tscn" id="18_virjx"]
+[ext_resource type="PackedScene" path="res://scenes/LevelElements/pot_open.tscn" id="19_b5n1p"]
 [ext_resource type="PackedScene" uid="uid://btgpkrhm2p4p2" path="res://meshes/Mesh_FloorStone1.glb" id="20_y7f3e"]
 [ext_resource type="PackedScene" uid="uid://bvtg7fj0cilbf" path="res://meshes/Mesh_FloorStone3.glb" id="21_7q3sb"]
 [ext_resource type="PackedScene" uid="uid://b46rfxgyids24" path="res://meshes/Mesh_FloorStone2.glb" id="22_a13wn"]
 [ext_resource type="PackedScene" uid="uid://dj03rf7upiesb" path="res://meshes/Mesh_FloorStone4.glb" id="23_babnn"]
-[ext_resource type="PackedScene" uid="uid://dmire6md5i4xs" path="res://meshes/Mesh_Emblem1.glb" id="24_scs71"]
+[ext_resource type="PackedScene" uid="uid://bnv84higej24f" path="res://scenes/LevelElements/grapple_me.tscn" id="24_o5se2"]
 [ext_resource type="PackedScene" uid="uid://c0lo5y4e5cxbk" path="res://meshes/Mesh_GoldPile.glb" id="25_tc0rs"]
 [ext_resource type="PackedScene" uid="uid://cbq5y04kabuat" path="res://meshes/Mesh_PillarBig.glb" id="26_tem50"]
 [ext_resource type="PackedScene" uid="uid://b0vk3ft3gu6vj" path="res://meshes/Mesh_GoldCoin.glb" id="27_gmjje"]
@@ -318,8 +318,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.64725, -1.86648, -18.8777)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02957, -0.397539, -12.1858)
 
 [node name="VoxelGI" type="VoxelGI" parent="."]
-size = Vector3(63.057, 33.549, 56.991)
-data = ExtResource("6_iajlw")
+size = Vector3(63.057, 39.1471, 56.991)
+data = ExtResource("5_13avf")
 script = ExtResource("7_px0nx")
 
 [node name="FogVolume" type="FogVolume" parent="."]
@@ -369,7 +369,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98917e-05, 0.085115, -5.741
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.26261, 0.840967, 13.08)
 
 [node name="PressurePlate" parent="." instance=ExtResource("10_ijcqf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4925, -0.196221, -18.1399)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4925, -0.130813, -18.1399)
 
 [node name="PressurePlate2" parent="." instance=ExtResource("10_ijcqf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1883, 5.1721, 17.2427)
@@ -708,8 +708,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.07732, -1.86648, -2.75126)
 [node name="Mesh_FloorStone5" parent="." instance=ExtResource("22_a13wn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.46305, -1.86648, -10.1314)
 
-[node name="Mesh_Emblem1" parent="." instance=ExtResource("24_scs71")]
+[node name="EmblemGrapple" parent="." instance=ExtResource("24_o5se2")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.38617, 2.80339, -6.00479)
+
+[node name="EmblemGrapple2" parent="." instance=ExtResource("24_o5se2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -12.8183, 2.80339, -9.02143)
+
+[node name="EmblemGrapple3" parent="." instance=ExtResource("24_o5se2")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -7.59332, 18.5437, -1.50377)
 
 [node name="Mesh_FloorStone6" parent="." instance=ExtResource("21_7q3sb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.29876, -0.116269, -21.217)
