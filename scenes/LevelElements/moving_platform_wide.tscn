@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://6jwml3vmpcdw"]
+[gd_scene load_steps=8 format=3 uid="uid://donak7j6fuc3r"]
 
 [ext_resource type="Script" path="res://src/MovingPlatform.gd" id="1_jyo8e"]
 [ext_resource type="Texture2D" uid="uid://d4nr6xdbyaujl" path="res://meshes/materials/stone_lines_texture.png" id="2_l0yrp"]
@@ -26,6 +26,7 @@ uv1_triplanar = true
 size = Vector3(2, 0.5, 4)
 
 [node name="MovingPlatform" type="RigidBody3D"]
+collision_layer = 17
 gravity_scale = 0.0
 lock_rotation = true
 freeze = true

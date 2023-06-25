@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://gqrutr37mpja"]
+[gd_scene load_steps=3 format=3 uid="uid://bidspqaqr6w8j"]
 
 [ext_resource type="PackedScene" uid="uid://brwbicffpjyst" path="res://meshes/Mesh_PlatformLong2.glb" id="1_ce3r5"]
 
@@ -8,6 +8,7 @@ data = PackedVector3Array(3.6641, 1.7498, 1.5785, 3.6641, -0.0002, -1.5785, 3.66
 [node name="Mesh_PlatformLong2" instance=ExtResource("1_ce3r5")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cube074" index="0"]
+collision_layer = 17
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube074/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_lkxox")

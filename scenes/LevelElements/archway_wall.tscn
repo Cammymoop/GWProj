@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bo8ls5m2p10gf"]
+[gd_scene load_steps=4 format=3 uid="uid://bsab0olfvy6e3"]
 
 [ext_resource type="PackedScene" uid="uid://dv2g3mbu02oqb" path="res://meshes/Mesh_ArchwayWall.glb" id="1_8bdk7"]
 [ext_resource type="Material" uid="uid://dl5n2fw05bd4e" path="res://meshes/materials/WallLowContranst.tres" id="2_rnuct"]
@@ -12,6 +12,7 @@ data = PackedVector3Array(-2.8621, 6.4953, -1.2348, -2.8621, 0.0005, 1.2348, -2.
 surface_material_override/0 = ExtResource("2_rnuct")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cube019" index="0"]
+collision_layer = 17
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube019/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_hgj20")

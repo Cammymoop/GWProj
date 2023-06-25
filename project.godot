@@ -16,6 +16,11 @@ run/main_scene="res://scenes/test_world_one.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.png"
 
+[display]
+
+window/size/viewport_width=1600
+window/size/viewport_height=900
+
 [filesystem]
 
 import/fbx/enabled=false

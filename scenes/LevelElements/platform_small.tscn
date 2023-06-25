@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://sm3iukw5for7"]
+[gd_scene load_steps=3 format=3 uid="uid://bwdchgsmn2d0o"]
 
 [ext_resource type="PackedScene" uid="uid://1yh0vmetwaqv" path="res://meshes/Mesh_Platform_Small.glb" id="1_gpv3d"]
 
@@ -11,6 +11,7 @@ points = PackedVector3Array(-3.64448, -0.0002, -1.55901, -0.533808, 1.7498, 1.55
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08124, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cube034" index="0"]
+collision_layer = 17
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube034/StaticBody3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_hpmw6")

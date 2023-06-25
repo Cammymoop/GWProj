@@ -5,7 +5,6 @@
 
 [resource]
 resource_name = "Stone"
-cull_mode = 2
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.906332, 0.796248, 0.596819, 1)
 roughness_texture = ExtResource("2_q33li")
