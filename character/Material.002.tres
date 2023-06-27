@@ -2,14 +2,18 @@
 
 [resource]
 resource_name = "Material.002"
-cull_mode = 2
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+depth_draw_mode = 1
 albedo_color = Color(0.870588, 0.588235, 0.396078, 1)
 roughness = 0.8
 rim = 0.19
 subsurf_scatter_enabled = true
-subsurf_scatter_strength = 1.0
+subsurf_scatter_strength = 0.34
 subsurf_scatter_skin_mode = true
 backlight = Color(0.00392157, 0.156863, 0.717647, 1)
 proximity_fade_distance = 0.2
-distance_fade_mode = 2
-distance_fade_max_distance = 1.8
+distance_fade_mode = 3
+distance_fade_min_distance = 0.9
+distance_fade_max_distance = 2.4

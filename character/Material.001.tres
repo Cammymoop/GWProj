@@ -11,12 +11,16 @@ noise = SubResource("FastNoiseLite_c5j3w")
 
 [resource]
 resource_name = "Material.001"
-cull_mode = 2
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+depth_draw_mode = 1
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
 roughness = 0.57
 emission_enabled = true
 normal_enabled = true
 normal_texture = SubResource("NoiseTexture2D_4hywl")
-distance_fade_mode = 2
-distance_fade_max_distance = 1.8
+distance_fade_mode = 3
+distance_fade_min_distance = 0.9
+distance_fade_max_distance = 2.4

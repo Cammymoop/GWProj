@@ -11,7 +11,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4772, -1.86648, -0.608829)
 [node name="Mesh_Platform2" parent="." instance=ExtResource("1_ilxa1")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-collision_mask = 17
+collision_layer = 17
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_lev8b")

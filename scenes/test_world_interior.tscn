@@ -223,7 +223,7 @@ omni_range = 50.0
 omni_attenuation = 1.27456
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.877582, 0.479427, -8.74228e-08, 0.479427, 0.877582, 0, 7.67206e-08, -4.19129e-08, -1, 8.451, -1.29607, -10.9371)
+transform = Transform3D(-0.877582, 0.479427, -8.74228e-08, 0.479427, 0.877582, 0, 7.67206e-08, -4.19129e-08, -1, 8.32119, -1.29607, -10.9371)
 mesh = SubResource("BoxMesh_3gdud")
 skeleton = NodePath("OmniLight3D")
 surface_material_override/0 = ExtResource("2_xqwiu")

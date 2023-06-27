@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bccci5jtd8on1"]
+[gd_scene load_steps=3 format=3 uid="uid://d37c387aeafe4"]
 
 [ext_resource type="PackedScene" uid="uid://c8fjfm8qhnxbf" path="res://meshes/Mesh_Stairs.glb" id="1_5jg8f"]
 
@@ -8,6 +8,7 @@ size = Vector3(4.60287, 6.64014, 0.431222)
 [node name="Node3D" type="Node3D"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 17
 
 [node name="Mesh_Stairs" parent="StaticBody3D" instance=ExtResource("1_5jg8f")]
 

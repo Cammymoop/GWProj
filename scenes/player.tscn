@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ddq0a2k7ustx8"]
+[gd_scene load_steps=8 format=3 uid="uid://ddq0a2k7ustx8"]
 
 [ext_resource type="Script" path="res://src/Player.gd" id="1_n8t68"]
 [ext_resource type="PackedScene" uid="uid://cfte47iv6vkal" path="res://character/char_v2.0.tscn" id="2_4in74"]
@@ -9,8 +9,6 @@ friction = 0.55
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lwymd"]
 height = 1.84876
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_srbr1"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mbsen"]
 radius = 0.1
@@ -33,10 +31,6 @@ script = ExtResource("1_n8t68")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_lwymd")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-visible = false
-mesh = SubResource("CapsuleMesh_srbr1")
-
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="."]
 remote_path = NodePath("../Node/Center")
 update_rotation = false
@@ -55,9 +49,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.368549, 0)
 [node name="CameraUpDown" type="Node3D" parent="Node/Center/CameraHorizontalPivot"]
 
 [node name="SpringArm3D" type="SpringArm3D" parent="Node/Center/CameraHorizontalPivot/CameraUpDown"]
-collision_mask = 16
 shape = SubResource("SphereShape3D_mbsen")
 spring_length = 5.0
+margin = 0.1
 
 [node name="Camera3D" type="Camera3D" parent="Node/Center/CameraHorizontalPivot/CameraUpDown/SpringArm3D"]
 

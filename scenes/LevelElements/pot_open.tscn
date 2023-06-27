@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dra3hk2ktp4wh"]
+[gd_scene load_steps=3 format=3 uid="uid://ckgkkiyqmrpy7"]
 
 [ext_resource type="PackedScene" uid="uid://cjfj8mudb6q75" path="res://meshes/Mesh_PotOpen.glb" id="1_5efwe"]
 
@@ -8,6 +8,7 @@ points = PackedVector3Array(0, 0.8203, -0.773626, 0, 0.618062, -0.767871, -0.562
 [node name="Mesh_PotOpen" instance=ExtResource("1_5efwe")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+collision_layer = 17
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_of6tq")

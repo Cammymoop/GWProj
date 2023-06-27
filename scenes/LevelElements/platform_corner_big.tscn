@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://vb2ksw7the2q"]
+[gd_scene load_steps=3 format=3 uid="uid://b2fvi87vyoya1"]
 
 [ext_resource type="PackedScene" uid="uid://balgowtd86wcn" path="res://meshes/Mesh_Platform_Corner_Big.glb" id="1_2kx2l"]
 
@@ -11,6 +11,7 @@ data = PackedVector3Array(3.6641, 1.7498, 1.5785, 3.6641, -0.0002, -1.5785, 3.66
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cube024" index="0"]
+collision_layer = 17
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube024/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_0l22u")
