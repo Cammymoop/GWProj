@@ -1,10 +1,9 @@
-extends RigidBody3D
+extends Node3D
 
 var start_pos : Vector3
 var end_pos : Vector3
 var rotationVector : Vector3
-@export var travelTime : float
-@export var delay : float
+@export var travelTime : float = 2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -27,13 +26,6 @@ func setup_spinTween():
 	spinTween.set_loops()
 	spinTween.tween_property(self, "global_rotation", rotationVector, travelTime).as_relative()
 	
-# 	var tween = create_tween()
-# 	tween.set_trans(Tween.TRANS_LINEAR)
-# 	tween.set_loops()
-# 	tween.tween_property(self, "global_position", end_pos, travelTime)
-# 	tween.tween_interval(delay)
-# 	tween.tween_property(self, "global_position", start_pos, travelTime)
-# 	tween.tween_interval(delay)
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

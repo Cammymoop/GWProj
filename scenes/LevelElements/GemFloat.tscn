@@ -10,11 +10,12 @@ size = Vector3(0.437386, 0.509748, 0.51618)
 gravity_scale = 0.0
 freeze_mode = 1
 script = ExtResource("1_qklyf")
-travelTime = 2.0
 
-[node name="Mesh_Gem" parent="." instance=ExtResource("2_fusli")]
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="Mesh_Gem" parent="Area3D" instance=ExtResource("2_fusli")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.250854, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_41sag")
 disabled = true

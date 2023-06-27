@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dy48vn6b25n60"]
+
+[ext_resource type="PackedScene" uid="uid://dier0b21mqbf1" path="res://meshes/Mesh_Gem.glb" id="2_omxi5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m2rq2"]
+size = Vector3(0.437386, 0.509748, 0.51618)
+
+[node name="Area3D" type="Area3D"]
+
+[node name="Mesh_Gem" parent="." instance=ExtResource("2_omxi5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.250854, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_m2rq2")
+disabled = true
