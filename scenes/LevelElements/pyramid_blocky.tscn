@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bscobm8fjo86y"]
+
+[ext_resource type="PackedScene" uid="uid://b15l38eftl34a" path="res://meshes/Mesh_PyramidBlocky.glb" id="1_xq01t"]
+
+[node name="Mesh_PyramidBlocky" instance=ExtResource("1_xq01t")]
+
+[node name="StaticBody3D" parent="Cube065" index="0"]
+collision_layer = 17

@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dyftocg1jx1pm" path="res://scenes/LevelElements/archway_fancy.tscn" id="13_7x7d7"]
 [ext_resource type="PackedScene" uid="uid://pxsm5615eble" path="res://meshes/Mesh_Torch.glb" id="13_jf7on"]
 [ext_resource type="PackedScene" uid="uid://bsab0olfvy6e3" path="res://scenes/LevelElements/archway_wall.tscn" id="14_fk16g"]
-[ext_resource type="PackedScene" uid="uid://bidspqaqr6w8j" path="res://scenes/LevelElements/platform_long_squared.tscn" id="15_o55qm"]
+[ext_resource type="PackedScene" uid="uid://gll4u808cq7s" path="res://scenes/LevelElements/platform_long_squared.tscn" id="15_o55qm"]
 [ext_resource type="PackedScene" uid="uid://cwbsc277cjifb" path="res://scenes/LevelElements/moving_platform_big.tscn" id="16_h6ooa"]
 [ext_resource type="PackedScene" uid="uid://b2fvi87vyoya1" path="res://scenes/LevelElements/platform_corner_big.tscn" id="18_virjx"]
 [ext_resource type="PackedScene" uid="uid://ckgkkiyqmrpy7" path="res://scenes/LevelElements/pot_open.tscn" id="19_b5n1p"]
@@ -29,10 +29,10 @@
 [ext_resource type="PackedScene" uid="uid://b0vk3ft3gu6vj" path="res://meshes/Mesh_GoldCoin.glb" id="27_gmjje"]
 [ext_resource type="PackedScene" uid="uid://bdmnrqmfbw706" path="res://meshes/Mesh_Pot1.glb" id="28_n6j6g"]
 [ext_resource type="PackedScene" uid="uid://ddshtpeescw1j" path="res://meshes/Mesh_Pot2.glb" id="29_2pvpq"]
-[ext_resource type="PackedScene" uid="uid://dkvbtrh4w6snm" path="res://meshes/Mesh_Pyramid.glb" id="30_d6bd7"]
-[ext_resource type="PackedScene" uid="uid://b15l38eftl34a" path="res://meshes/Mesh_PyramidBlocky.glb" id="31_txno8"]
+[ext_resource type="PackedScene" uid="uid://d3kqdu0rpbb1e" path="res://scenes/LevelElements/pyramid.tscn" id="30_sa21p"]
+[ext_resource type="PackedScene" uid="uid://bscobm8fjo86y" path="res://scenes/LevelElements/pyramid_blocky.tscn" id="31_hnvn5"]
 [ext_resource type="PackedScene" uid="uid://bofwqitpcnw2q" path="res://meshes/Mesh_StoneTablet.glb" id="32_qlk2c"]
-[ext_resource type="PackedScene" uid="uid://bhprdwphxh8n4" path="res://meshes/Mesh_Archway2.glb" id="33_sug63"]
+[ext_resource type="PackedScene" uid="uid://bioterq8brdrr" path="res://scenes/LevelElements/big_arch.tscn" id="33_h61ty"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5as67"]
 
@@ -48,6 +48,9 @@ ambient_light_sky_contribution = 0.0
 ambient_light_energy = 0.0
 reflected_light_source = 1
 ssao_enabled = true
+ssao_intensity = 3.02
+ssao_power = 2.12132
+ssao_light_affect = 0.41
 ssil_enabled = true
 ssil_intensity = 1.76
 sdfgi_read_sky_light = false
@@ -316,7 +319,7 @@ transform = Transform3D(0.959874, -0.280432, 0, 0.280432, 0.959874, 0, 0, 0, 1, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.64725, -1.86648, -18.8777)
 
 [node name="PushBlock" parent="." instance=ExtResource("5_n8syk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02957, -0.397539, -12.1858)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.22986, -0.87348, -11.9855)
 
 [node name="VoxelGI" type="VoxelGI" parent="."]
 size = Vector3(63.057, 39.1471, 56.991)
@@ -853,17 +856,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.66048, -0.283046, 12.817)
 [node name="Mesh_Pot4" parent="." instance=ExtResource("29_2pvpq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11851, -0.283046, 12.8428)
 
-[node name="Mesh_Pyramid" parent="." instance=ExtResource("30_d6bd7")]
+[node name="Mesh_Pyramid" parent="." instance=ExtResource("30_sa21p")]
 transform = Transform3D(2.543, 0, 0, 0, 2.543, 0, 0, 0, 2.543, 16.0339, -1.86648, 5.36407)
 
-[node name="Mesh_PyramidBlocky" parent="." instance=ExtResource("31_txno8")]
+[node name="Mesh_PyramidBlocky" parent="." instance=ExtResource("31_hnvn5")]
 transform = Transform3D(2.173, 0, 0, 0, 2.173, 0, 0, 0, 2.173, -10.3411, -1.86648, 6.7008)
 
 [node name="Mesh_StoneTablet" parent="." instance=ExtResource("32_qlk2c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15804, 1.5855, -4.74894)
 
-[node name="Mesh_Archway2" parent="." instance=ExtResource("33_sug63")]
+[node name="Mesh_Archway2" parent="." instance=ExtResource("33_h61ty")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25364, 12.2317, -19.3077)
 
-[node name="Mesh_Archway3" parent="." instance=ExtResource("33_sug63")]
+[node name="Mesh_Archway3" parent="." instance=ExtResource("33_h61ty")]
 transform = Transform3D(1.665, 0, 0, 0, 1.665, 0, 0, 0, 1.665, 0.905874, -2.23731, -12.7798)

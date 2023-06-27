@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cbq5y04kabuat" path="res://meshes/Mesh_PillarBig.glb" id="10_atmxq"]
 [ext_resource type="PackedScene" uid="uid://b2fvi87vyoya1" path="res://scenes/LevelElements/platform_corner_big.tscn" id="11_g238y"]
 [ext_resource type="PackedScene" uid="uid://cqoc5uyblgvnb" path="res://scenes/LevelElements/platform_long_1.tscn" id="12_mx0ui"]
-[ext_resource type="PackedScene" uid="uid://bidspqaqr6w8j" path="res://scenes/LevelElements/platform_long_squared.tscn" id="13_3yp12"]
+[ext_resource type="PackedScene" uid="uid://gll4u808cq7s" path="res://scenes/LevelElements/platform_long_squared.tscn" id="13_3yp12"]
 [ext_resource type="PackedScene" uid="uid://csm3xijn7cq8x" path="res://scenes/LevelElements/pressure_plate.tscn" id="14_xyewg"]
 [ext_resource type="PackedScene" uid="uid://bwasa1hkbb8sn" path="res://scenes/LevelElements/push_block.tscn" id="15_58cac"]
 [ext_resource type="PackedScene" uid="uid://cwbsc277cjifb" path="res://scenes/LevelElements/moving_platform_big.tscn" id="16_hwwbo"]
@@ -476,7 +476,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0435, 0.0143683, 14.3183)
 [node name="Node3D" type="Node3D" parent="."]
 
 [node name="MovingPlatform" parent="Node3D" instance=ExtResource("16_hwwbo")]
-transform = Transform3D(1.37273, 0, 0, 0, -6.0004e-08, -1.37273, 0, 1.37273, -6.0004e-08, 1.07643, -1.49644, 4.37682)
+transform = Transform3D(1.37273, 0, 0, 0, -6.00039e-08, -1.37273, 0, 1.37273, -6.00039e-08, 1.07643, -1.49644, 4.37682)
 travelTime = 0.4
 delay = 0.0
 activation_mode = 2

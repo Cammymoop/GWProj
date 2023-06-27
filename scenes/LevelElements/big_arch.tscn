@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bioterq8brdrr"]
+
+[ext_resource type="PackedScene" uid="uid://bhprdwphxh8n4" path="res://meshes/Mesh_Archway2.glb" id="1_phb0g"]
+
+[node name="Mesh_Archway2" instance=ExtResource("1_phb0g")]
+
+[node name="StaticBody3D" parent="Cube021" index="0"]
+collision_layer = 17
