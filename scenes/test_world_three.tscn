@@ -1,0 +1,558 @@
+[gd_scene load_steps=47 format=3 uid="uid://b7pnoyi33cnpx"]
+
+[ext_resource type="Material" uid="uid://bf6h0fc6bg625" path="res://meshes/materials/Stone.tres" id="1_k3cgu"]
+[ext_resource type="Material" uid="uid://l6csymeu2gyn" path="res://meshes/materials/WallHighContranstTriplanar.tres" id="2_iyvwr"]
+[ext_resource type="Script" path="res://src/the_voxel_gi_doesnt_want_to_start_working.gd" id="6_x3aie"]
+[ext_resource type="PackedScene" uid="uid://cuokxwujesdvs" path="res://scenes/LevelElements/special/moving_platform_obj.tscn" id="7_35kfg"]
+[ext_resource type="PackedScene" uid="uid://ddq0a2k7ustx8" path="res://scenes/player.tscn" id="8_4pjm7"]
+[ext_resource type="PackedScene" uid="uid://bwdchgsmn2d0o" path="res://scenes/LevelElements/building blocks/platform_small.tscn" id="9_mr3cc"]
+[ext_resource type="PackedScene" uid="uid://dig2ywk02orjr" path="res://scenes/LevelElements/special/grapple_target.tscn" id="10_gduh7"]
+[ext_resource type="PackedScene" uid="uid://cqoc5uyblgvnb" path="res://scenes/LevelElements/building blocks/platform_long_1.tscn" id="11_gmyub"]
+[ext_resource type="PackedScene" uid="uid://gll4u808cq7s" path="res://scenes/LevelElements/building blocks/platform_long_squared.tscn" id="12_bguen"]
+[ext_resource type="PackedScene" uid="uid://pxsm5615eble" path="res://meshes/Mesh_Torch.glb" id="12_xwlig"]
+[ext_resource type="PackedScene" uid="uid://d3kqdu0rpbb1e" path="res://scenes/LevelElements/props/pyramid.tscn" id="13_iqv5q"]
+[ext_resource type="PackedScene" uid="uid://dyftocg1jx1pm" path="res://scenes/LevelElements/building blocks/archway_fancy.tscn" id="13_rbrs5"]
+[ext_resource type="PackedScene" uid="uid://bsab0olfvy6e3" path="res://scenes/LevelElements/building blocks/archway_wall.tscn" id="14_t78j7"]
+[ext_resource type="Material" uid="uid://cpolpeq4n76ow" path="res://meshes/materials/Gold.tres" id="14_udr65"]
+[ext_resource type="PackedScene" uid="uid://cwbsc277cjifb" path="res://scenes/LevelElements/special/moving_platform_big.tscn" id="15_bw54j"]
+[ext_resource type="PackedScene" uid="uid://biwvlqh62yhtp" path="res://scenes/LevelElements/building blocks/pillar_small.tscn" id="16_crjff"]
+[ext_resource type="PackedScene" uid="uid://donak7j6fuc3r" path="res://scenes/LevelElements/special/moving_platform_wide.tscn" id="17_p78uj"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5as67"]
+
+[sub_resource type="Sky" id="Sky_sqljh"]
+sky_material = SubResource("ProceduralSkyMaterial_5as67")
+
+[sub_resource type="Environment" id="Environment_3x11q"]
+background_mode = 2
+sky = SubResource("Sky_sqljh")
+ambient_light_source = 1
+ambient_light_color = Color(0.0313726, 0.101961, 0.219608, 1)
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.0
+reflected_light_source = 1
+ssao_enabled = true
+ssil_enabled = true
+ssil_intensity = 1.76
+sdfgi_read_sky_light = false
+sdfgi_bounce_feedback = 0.89
+sdfgi_cascades = 6
+sdfgi_min_cell_size = 0.176978
+sdfgi_cascade0_distance = 11.3266
+sdfgi_max_distance = 724.9
+sdfgi_y_scale = 2
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.022
+volumetric_fog_albedo = Color(1, 0.972549, 0.635294, 1)
+volumetric_fog_length = 120.89
+adjustment_enabled = true
+adjustment_saturation = 0.81
+
+[sub_resource type="QuadMesh" id="QuadMesh_lvjm0"]
+size = Vector2(80, 80)
+subdivide_width = 5
+subdivide_depth = 5
+center_offset = Vector3(0, 0.5, 0)
+orientation = 1
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_r0ogd"]
+points = PackedVector3Array(-40, 0.5, -40, -40, 0.5, 40, 40, 0.5, -40, 40, 0.5, 40)
+
+[sub_resource type="BoxMesh" id="BoxMesh_eei1u"]
+flip_faces = true
+size = Vector3(30, 30, 30)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_jyqfq"]
+data = PackedVector3Array(15, 15, 15, -15, 15, 15, -15, -15, 15, 15, -15, 15, 15, 15, 15, -15, -15, 15, -15, 15, -15, 15, 15, -15, 15, -15, -15, -15, -15, -15, -15, 15, -15, 15, -15, -15, 15, 15, -15, 15, 15, 15, 15, -15, 15, 15, -15, -15, 15, 15, -15, 15, -15, 15, -15, 15, 15, -15, 15, -15, -15, -15, -15, -15, -15, 15, -15, 15, 15, -15, -15, -15, -15, 15, 15, 15, 15, 15, 15, 15, -15, -15, 15, -15, -15, 15, 15, 15, 15, -15, 15, -15, 15, -15, -15, 15, -15, -15, -15, 15, -15, -15, 15, -15, 15, -15, -15, -15)
+
+[sub_resource type="BoxMesh" id="BoxMesh_oc7v5"]
+size = Vector3(4, 10, 12)
+
+[sub_resource type="FogMaterial" id="FogMaterial_q1jo2"]
+density = 0.2
+
+[sub_resource type="Gradient" id="Gradient_ti72c"]
+offsets = PackedFloat32Array(0, 0.327957, 0.752688, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.976471, 1, 1, 1, 0.545098, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_plf3d"]
+gradient = SubResource("Gradient_ti72c")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l5h6m"]
+transparency = 1
+disable_ambient_light = true
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 1, 0.254902)
+albedo_texture = SubResource("GradientTexture2D_plf3d")
+emission_enabled = true
+emission = Color(0.682353, 0.423529, 0.207843, 1)
+emission_energy_multiplier = 1.2
+backlight = Color(1, 1, 1, 1)
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+proximity_fade_enabled = true
+proximity_fade_distance = 6.0
+
+[sub_resource type="Gradient" id="Gradient_8jho0"]
+offsets = PackedFloat32Array(0, 0.344086, 0.736559, 1)
+colors = PackedColorArray(0.168627, 0, 0.337255, 0, 0.627451, 0.552941, 0.705882, 0.835294, 0.921569, 0.905882, 0.937255, 0.764706, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_npatr"]
+gradient = SubResource("Gradient_8jho0")
+
+[sub_resource type="Curve" id="Curve_rry5x"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.576037, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_5x88p"]
+curve = SubResource("Curve_rry5x")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kqnbj"]
+emission_shape = 3
+emission_box_extents = Vector3(15, 15, 15)
+direction = Vector3(0, 1, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 0.2
+initial_velocity_max = 2.0
+linear_accel_min = 0.1
+linear_accel_max = 0.3
+scale_min = 0.06
+scale_max = 0.3
+color_ramp = SubResource("GradientTexture1D_npatr")
+turbulence_enabled = true
+turbulence_noise_scale = 1.0
+turbulence_influence_min = 0.0
+turbulence_influence_over_life = SubResource("CurveTexture_5x88p")
+
+[sub_resource type="QuadMesh" id="QuadMesh_v1njt"]
+
+[sub_resource type="Gradient" id="Gradient_wyaws"]
+colors = PackedColorArray(0.815031, 0.153946, 0.370558, 1, 0.828131, 0.701477, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bms8e"]
+gradient = SubResource("Gradient_wyaws")
+
+[sub_resource type="Curve" id="Curve_c4ejq"]
+_data = [Vector2(0, 0.172727), 0.0, 0.0, 0, 0, Vector2(0.179723, 1), 0.0, 0.0, 0, 0, Vector2(0.506912, 0.309091), 0.0, 0.0, 0, 0, Vector2(0.792627, 0.181818), 0.0, 0.0, 0, 0, Vector2(0.857143, 0.0090909), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_427yp"]
+curve = SubResource("Curve_c4ejq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_13s5i"]
+lifetime_randomness = 0.85
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, 3, 0)
+initial_velocity_min = 0.3
+initial_velocity_max = 0.3
+scale_max = 1.6
+scale_curve = SubResource("CurveTexture_427yp")
+color_initial_ramp = SubResource("GradientTexture1D_bms8e")
+
+[sub_resource type="Gradient" id="Gradient_rt8uw"]
+offsets = PackedFloat32Array(0, 0.370787, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_a8fjt"]
+gradient = SubResource("Gradient_rt8uw")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8mi0j"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("GradientTexture2D_a8fjt")
+emission = Color(0.572549, 0, 0, 1)
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_madmu"]
+material = SubResource("StandardMaterial3D_8mi0j")
+
+[sub_resource type="BoxMesh" id="BoxMesh_ajbpv"]
+material = ExtResource("14_udr65")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ckldi"]
+
+[node name="TestWorld" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_3x11q")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.0459738, -0.299217, 0.953077, -0.0579027, 0.951684, 0.301572, -0.997263, -0.0690501, 0.0264271, 2.18766, 0, 0)
+visible = false
+light_color = Color(1, 0.635294, 0.505882, 1)
+light_energy = 1.4
+shadow_enabled = true
+shadow_opacity = 0.68
+shadow_blur = 1.381
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8412, 13.823, 0.400169)
+visible = false
+light_color = Color(0.439216, 0.772549, 0.92549, 1)
+light_energy = 0.2
+light_indirect_energy = 3.353
+light_specular = 2.763
+shadow_enabled = true
+shadow_blur = 2.0
+omni_range = 50.316
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.87921, -2.36648, -2.44435)
+mesh = SubResource("QuadMesh_lvjm0")
+surface_material_override/0 = ExtResource("1_k3cgu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+collision_layer = 17
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_r0ogd")
+
+[node name="OutsideWall" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.494, 0, 0, 0, 1.2476, 0, 0, 0, 1.494, 0, 0, 0)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_eei1u")
+surface_material_override/0 = ExtResource("2_iyvwr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="OutsideWall"]
+collision_layer = 17
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OutsideWall/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_jyqfq")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.0321609, 0, 0.999483, 0, 1, 0, -0.999483, 0, -0.0321609, 31.0069, 0, -1.01634)
+mesh = SubResource("BoxMesh_oc7v5")
+surface_material_override/0 = ExtResource("2_iyvwr")
+
+[node name="VoxelGI" type="VoxelGI" parent="."]
+size = Vector3(63.057, 33.549, 56.991)
+script = ExtResource("6_x3aie")
+
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.26565, -1.43403, -0.645203)
+size = Vector3(51.2275, 0.962428, 33.6003)
+material = SubResource("FogMaterial_q1jo2")
+
+[node name="DustParticles" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.97296, 0)
+material_override = SubResource("StandardMaterial3D_l5h6m")
+cast_shadow = 0
+gi_mode = 0
+amount = 36
+lifetime = 12.0
+visibility_aabb = AABB(-18.9775, -17.1042, -16.6132, 37.955, 34.2083, 33.2264)
+process_material = SubResource("ParticleProcessMaterial_kqnbj")
+draw_pass_1 = SubResource("QuadMesh_v1njt")
+
+[node name="MovingPlatformHolder" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.8005, -0.388, 1.286)
+
+[node name="MovingPlatform" parent="MovingPlatformHolder" instance=ExtResource("7_35kfg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98917e-05, 2.49147e-05, -0.000390291)
+travelTime = 3.0
+delay = 1.0
+end_position_node = NodePath("../EndPos")
+
+[node name="EndPos" type="Marker3D" parent="MovingPlatformHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98917e-05, 0.085115, -5.74188)
+
+[node name="MovingPlatformHolder2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.8842, -0.388, 1.286)
+
+[node name="MovingPlatform" parent="MovingPlatformHolder2" instance=ExtResource("7_35kfg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98917e-05, 2.49147e-05, -0.000390291)
+travelTime = 3.0
+delay = 1.0
+activation_mode = 2
+end_position_node = NodePath("../EndPos")
+
+[node name="EndPos" type="Marker3D" parent="MovingPlatformHolder2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98917e-05, 0.085115, -5.74188)
+
+[node name="Player" parent="." instance=ExtResource("8_4pjm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.26261, -0.726816, 20.0856)
+
+[node name="Mesh_Torch" parent="." instance=ExtResource("12_xwlig")]
+transform = Transform3D(1, 0, 0, 0, 0.847252, 0.531192, 0, -0.531192, 0.847252, 1.24502, 3.44376, 19.8213)
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="Mesh_Torch"]
+transform = Transform3D(1, 0, 0, 0, 0.847252, -0.531192, 0, 0.531192, 0.847252, 0.00576758, 0.900683, 0.040823)
+amount = 50
+lifetime = 1.4
+visibility_aabb = AABB(-2.87438, -0.778281, -2.10412, 5.74876, 6.77995, 4.20824)
+process_material = SubResource("ParticleProcessMaterial_13s5i")
+draw_pass_1 = SubResource("QuadMesh_madmu")
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Mesh_Torch"]
+transform = Transform3D(1, 0, 0, 0, 0.847252, -0.531192, 0, 0.531192, 0.847252, -0.00684428, 1.23598, -0.425689)
+light_color = Color(0.72549, 0.431373, 0, 1)
+light_energy = 12.0
+light_indirect_energy = 6.292
+light_specular = 2.867
+light_bake_mode = 1
+shadow_enabled = true
+shadow_blur = 1.6
+omni_range = 50.0
+omni_attenuation = 1.27456
+
+[node name="Mesh_Torch2" parent="." instance=ExtResource("12_xwlig")]
+transform = Transform3D(1, 0, 0, 0, 0.847252, 0.531192, 0, -0.531192, 0.847252, -13.1454, 7.03692, 22.1531)
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="Mesh_Torch2"]
+transform = Transform3D(1, 0, 0, 0, 0.847252, -0.531192, 0, 0.531192, 0.847252, 0.00576758, 0.900683, 0.040823)
+amount = 50
+lifetime = 1.4
+visibility_aabb = AABB(-2.87438, -0.778281, -2.10412, 5.74876, 6.77995, 4.20824)
+process_material = SubResource("ParticleProcessMaterial_13s5i")
+draw_pass_1 = SubResource("QuadMesh_madmu")
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Mesh_Torch2"]
+transform = Transform3D(1, 0, 0, 0, 0.847252, -0.531192, 0, 0.531192, 0.847252, -0.00684428, 1.23598, -0.425689)
+light_color = Color(0.72549, 0.431373, 0, 1)
+light_energy = 12.0
+light_indirect_energy = 6.292
+light_specular = 2.867
+light_bake_mode = 1
+shadow_enabled = true
+shadow_blur = 1.6
+omni_range = 50.0
+omni_attenuation = 1.27456
+
+[node name="Mesh_Torch3" parent="." instance=ExtResource("12_xwlig")]
+transform = Transform3D(-4.37114e-08, 0.531192, -0.847252, 0, 0.847252, 0.531192, 1, 2.32191e-08, -3.70346e-08, -22.1612, 14.5308, 6.60783)
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="Mesh_Torch3"]
+transform = Transform3D(1, 0, 0, 0, 0.847252, -0.531192, 0, 0.531192, 0.847252, 0.00576758, 0.900683, 0.040823)
+amount = 50
+lifetime = 1.4
+visibility_aabb = AABB(-2.87438, -0.778281, -2.10412, 5.74876, 6.77995, 4.20824)
+process_material = SubResource("ParticleProcessMaterial_13s5i")
+draw_pass_1 = SubResource("QuadMesh_madmu")
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Mesh_Torch3"]
+transform = Transform3D(1, -1.77636e-15, -3.55271e-15, 0, 0.847251, -0.531192, 0, 0.531192, 0.847251, -0.00684404, 1.23598, -0.425686)
+light_color = Color(0.72549, 0.431373, 0, 1)
+light_energy = 12.0
+light_indirect_energy = 6.292
+light_specular = 2.867
+light_bake_mode = 1
+shadow_enabled = true
+shadow_blur = 1.6
+omni_range = 50.0
+omni_attenuation = 1.27456
+
+[node name="Mesh_Torch5" parent="." instance=ExtResource("12_xwlig")]
+transform = Transform3D(-4.37114e-08, -0.531192, 0.847252, 0, 0.847252, 0.531192, -1, 2.32191e-08, -3.70346e-08, 22.198, 12.8755, 6.5577)
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="Mesh_Torch5"]
+transform = Transform3D(1, 0, 0, 0, 0.847252, -0.531192, 0, 0.531192, 0.847252, 0.00576758, 0.900683, 0.040823)
+amount = 50
+lifetime = 1.4
+visibility_aabb = AABB(-2.87438, -0.778281, -2.10412, 5.74876, 6.77995, 4.20824)
+process_material = SubResource("ParticleProcessMaterial_13s5i")
+draw_pass_1 = SubResource("QuadMesh_madmu")
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Mesh_Torch5"]
+transform = Transform3D(1, 0, 0, 0, 0.847252, -0.531192, 0, 0.531192, 0.847252, -0.00684428, 1.23598, -0.425689)
+light_color = Color(0.72549, 0.431373, 0, 1)
+light_energy = 12.0
+light_indirect_energy = 6.292
+light_specular = 2.867
+light_bake_mode = 1
+shadow_enabled = true
+shadow_blur = 1.6
+omni_range = 50.0
+omni_attenuation = 1.27456
+
+[node name="Mesh_Torch4" parent="." instance=ExtResource("12_xwlig")]
+transform = Transform3D(-1, 4.64383e-08, -7.40691e-08, 0, 0.847252, 0.531192, 8.74228e-08, 0.531192, -0.847252, 15.8546, 12.9953, -22.1736)
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="Mesh_Torch4"]
+transform = Transform3D(1, 0, 0, 0, 0.847252, -0.531192, 0, 0.531192, 0.847252, 0.00576758, 0.900683, 0.040823)
+amount = 50
+lifetime = 1.4
+visibility_aabb = AABB(-2.87438, -0.778281, -2.10412, 5.74876, 6.77995, 4.20824)
+process_material = SubResource("ParticleProcessMaterial_13s5i")
+draw_pass_1 = SubResource("QuadMesh_madmu")
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Mesh_Torch4"]
+transform = Transform3D(1, 0, 0, 0, 0.847252, -0.531192, 0, 0.531192, 0.847252, -0.00684428, 1.23598, -0.425689)
+light_color = Color(0.72549, 0.431373, 0, 1)
+light_energy = 12.0
+light_indirect_energy = 6.292
+light_specular = 2.867
+light_bake_mode = 1
+shadow_enabled = true
+shadow_blur = 1.6
+omni_range = 50.0
+omni_attenuation = 1.27456
+
+[node name="Mesh_Torch6" parent="." instance=ExtResource("12_xwlig")]
+transform = Transform3D(-1, 4.64383e-08, -7.40691e-08, 0, 0.847252, 0.531192, 8.74228e-08, 0.531192, -0.847252, -13.1454, 14.8276, -22.1736)
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="Mesh_Torch6"]
+transform = Transform3D(1, 0, 0, 0, 0.847252, -0.531192, 0, 0.531192, 0.847252, 0.00576758, 0.900683, 0.040823)
+amount = 50
+lifetime = 1.4
+visibility_aabb = AABB(-2.87438, -0.778281, -2.10412, 5.74876, 6.77995, 4.20824)
+process_material = SubResource("ParticleProcessMaterial_13s5i")
+draw_pass_1 = SubResource("QuadMesh_madmu")
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Mesh_Torch6"]
+transform = Transform3D(1, 2.84217e-14, 3.55271e-14, 0, 0.847251, -0.531192, 0, 0.531192, 0.847251, -0.00684452, 1.23598, -0.425688)
+light_color = Color(0.72549, 0.431373, 0, 1)
+light_energy = 12.0
+light_indirect_energy = 6.292
+light_specular = 2.867
+light_bake_mode = 1
+shadow_enabled = true
+shadow_blur = 1.6
+omni_range = 50.0
+omni_attenuation = 1.27456
+
+[node name="Mesh_Torch7" parent="." instance=ExtResource("12_xwlig")]
+transform = Transform3D(1.31134e-07, 0.531192, -0.847252, -1.89462e-15, 0.847252, 0.531192, 1, -6.96574e-08, 1.11104e-07, -11.9444, 11.9605, 0.244714)
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="Mesh_Torch7"]
+transform = Transform3D(1, 0, 0, 0, 0.847252, -0.531192, 0, 0.531192, 0.847252, 0.00576758, 0.900683, 0.040823)
+amount = 50
+lifetime = 1.4
+visibility_aabb = AABB(-2.87438, -0.778281, -2.10412, 5.74876, 6.77995, 4.20824)
+process_material = SubResource("ParticleProcessMaterial_13s5i")
+draw_pass_1 = SubResource("QuadMesh_madmu")
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Mesh_Torch7"]
+transform = Transform3D(1, 0, 0, 0, 0.847252, -0.531192, 0, 0.531192, 0.847252, -0.00684428, 1.23598, -0.425689)
+light_color = Color(0.72549, 0.431373, 0, 1)
+light_energy = 12.0
+light_indirect_energy = 6.292
+light_specular = 2.867
+light_bake_mode = 1
+shadow_enabled = true
+shadow_blur = 1.6
+omni_range = 50.0
+omni_attenuation = 1.27456
+
+[node name="Mesh_Archway" parent="." instance=ExtResource("13_rbrs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28911, -2.26401, 20.0134)
+
+[node name="Mesh_ArchwayWall2" parent="." instance=ExtResource("14_t78j7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35255, -1.9565, 21.2889)
+
+[node name="Mesh_Archway2" parent="." instance=ExtResource("13_rbrs5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20.8429, 9.03332, 18.7702)
+
+[node name="Mesh_ArchwayWall3" parent="." instance=ExtResource("14_t78j7")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 22.1184, 9.34083, 18.7068)
+
+[node name="Mesh_Platform_Small" parent="." instance=ExtResource("9_mr3cc")]
+transform = Transform3D(2.28301, 0, 0, 0, 2.28301, 0, 0, 0, 2.28301, 1.37913, -1.86648, 6.40004)
+
+[node name="Mesh_Platform_Small3" parent="." instance=ExtResource("9_mr3cc")]
+transform = Transform3D(3.33917, 0, 0, 0, 2.28301, 0, 0, 0, 2.28301, -17.2031, -1.86648, 6.40004)
+
+[node name="Mesh_Platform_Small2" parent="." instance=ExtResource("9_mr3cc")]
+transform = Transform3D(2.28301, 0, 0, 0, 6.98422, 0, 0, 0, 2.28301, 1.37913, -1.86648, -0.800885)
+
+[node name="Mesh_Platform_Small5" parent="." instance=ExtResource("9_mr3cc")]
+transform = Transform3D(4.47989, 0, 0, 0, 7.56968, 0, 0, 0, 3.04556, 16.9869, -3.85197, 18.805)
+
+[node name="Mesh_Platform_Small4" parent="." instance=ExtResource("9_mr3cc")]
+transform = Transform3D(2.28301, 0, 0, 0, 6.98422, 0, 0, 0, 2.28301, 5.25904, -2.76389, -18.8075)
+
+[node name="Mesh_GrappleTarget" parent="." instance=ExtResource("10_gduh7")]
+transform = Transform3D(2.35722, 0, 0, 0, 2.35722, 0, 0, 0, 2.35722, 1.47989, 7.63986, 2.72573)
+
+[node name="Mesh_GrappleTarget2" parent="." instance=ExtResource("10_gduh7")]
+transform = Transform3D(-1.67341e-07, -3.82832, 1.67341e-07, 0, -1.67341e-07, -3.82832, 3.82832, -1.67341e-07, 7.31472e-15, -14.0537, 18.6833, 6.63208)
+
+[node name="Mesh_GrappleTarget4" parent="." instance=ExtResource("10_gduh7")]
+transform = Transform3D(3.82832, 1.42109e-14, 0, 0, -1.67341e-07, -3.82832, -1.42109e-14, 3.82832, -1.67341e-07, -5.38942, 18.6833, -0.936711)
+
+[node name="Mesh_PlatformLong1" parent="." instance=ExtResource("11_gmyub")]
+transform = Transform3D(1.32876, 0, 0, 0, 2.28206, 0, 0, 0, 1.67902, -7.0808, -1.86648, 6.40691)
+
+[node name="Mesh_PlatformLong2" parent="." instance=ExtResource("12_bguen")]
+transform = Transform3D(2.11135, 0, 0, 0, 12.1608, 0, 0, 0, 1.5442, -19.7358, -1.86648, 0.394706)
+
+[node name="Mesh_PlatformLong6" parent="." instance=ExtResource("12_bguen")]
+transform = Transform3D(1.35503, 0, 0, 0, 12.1608, 0, 0, 0, 1.5442, -7.15197, -12.6866, 0.394706)
+
+[node name="Mesh_PlatformLong8" parent="." instance=ExtResource("12_bguen")]
+transform = Transform3D(1.35503, 0, 0, 0, 12.1608, 0, 0, 0, 1.5442, 15.1244, -12.6866, -17.6275)
+
+[node name="Mesh_PlatformLong3" parent="." instance=ExtResource("12_bguen")]
+transform = Transform3D(2.11135, 0, 0, 0, 12.1608, 0, 0, 0, 1.5442, -19.7358, -1.86648, 12.4515)
+
+[node name="Mesh_PlatformLong7" parent="." instance=ExtResource("12_bguen")]
+transform = Transform3D(-1.59656e-07, 0, -1.5442, 0, 12.1608, 0, 3.6525, 0, -6.74993e-08, 7.41505, -1.86648, 16.1831)
+
+[node name="Mesh_PlatformLong5" parent="." instance=ExtResource("12_bguen")]
+transform = Transform3D(1.46874, 0, 0, 0, 12.1608, 0, 0, 0, 1.5442, -6.67403, 8.29022, 12.4515)
+
+[node name="Mesh_PlatformLong4" parent="." instance=ExtResource("12_bguen")]
+transform = Transform3D(1.71089, 0, 0, 0, 0.7635, 0, 0, 0, 2.25892, -8.53227, 7.34667, 6.41179)
+
+[node name="Mesh_Pyramid" parent="." instance=ExtResource("13_iqv5q")]
+transform = Transform3D(0.175516, 0, 0, 0, 1, 0, 0, 0, 1, -22.2896, 5.61177, 6.32502)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.295403, 0, 0, 0, 3.86904, 0, 0, 0, 1, -22.4247, 3.87724, 6.32429)
+mesh = SubResource("BoxMesh_ajbpv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_ckldi")
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5646, 9.11617, -18.8064)
+
+[node name="MovingPlatform" parent="Node3D" instance=ExtResource("15_bw54j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.80456, 0, 0)
+travelTime = 6.0
+activation_mode = 1
+end_position_node = NodePath("../Marker3D")
+always_active = true
+
+[node name="Marker3D" type="Marker3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.3042, 0, 0)
+
+[node name="Mesh_PillarSmall" parent="." instance=ExtResource("16_crjff")]
+transform = Transform3D(2.71979, 0, 0, 0, -7.92572e-08, -2.71979, 0, 1.81319, -1.18886e-07, -9.16621, 12.7222, -24.0845)
+
+[node name="Mesh_GrappleTarget3" parent="." instance=ExtResource("10_gduh7")]
+transform = Transform3D(1.59777, 0, 0, 0, 1.59777, 0, 0, 0, 1.59777, -9.16817, 12.8034, -20.5335)
+
+[node name="Mesh_PillarSmall2" parent="." instance=ExtResource("16_crjff")]
+transform = Transform3D(-2.71979, -1.58514e-07, 1.03933e-14, 0, -7.92572e-08, -2.71979, 2.37772e-07, -1.81319, 1.18886e-07, 15.8769, 12.7222, 24.4518)
+
+[node name="Mesh_GrappleTarget5" parent="." instance=ExtResource("10_gduh7")]
+transform = Transform3D(-1.59777, 0, -1.39682e-07, 0, 1.59777, 0, 1.39682e-07, 0, -1.59777, 15.8789, 12.8034, 20.9008)
+
+[node name="Node3D2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9984, 13.8128, 13.3012)
+
+[node name="MovingPlatform" parent="Node3D2" instance=ExtResource("17_p78uj")]
+transform = Transform3D(2.65681, 0, 0, 0, -1.16133e-07, 2.65681, 0, -2.65681, -1.16133e-07, -3.52293, 0, 0)
+activation_mode = 1
+end_position_node = NodePath("../EndPos")
+always_active = true
+
+[node name="EndPos" type="Marker3D" parent="Node3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.68832, 0, 0)
