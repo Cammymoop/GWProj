@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dig2ywk02orjr"]
+
+[ext_resource type="PackedScene" uid="uid://yrcmp0m4c4mc" path="res://meshes/Mesh_GrappleTarget.glb" id="1_8gm7m"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ljh3i"]
+points = PackedVector3Array(0, 0.846008, 0.119648, 0, 0.846008, -0.11966, -0.846008, 0, 0.119648, -0.669122, 0, 0.127186, 0, 0.668956, 0.127186, 0.846008, 0, 0.119648, 0.846008, 0, -0.11966, -0.846008, 0, -0.11966, 0, -0.846008, 0.119648, 0, -0.669122, 0.127186, 0.668956, 0, 0.127186, 0, -0.846008, -0.11966)
+
+[node name="Mesh_GrappleTarget" instance=ExtResource("1_8gm7m")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube032" index="0"]
+collision_layer = 21
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube032/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_ljh3i")

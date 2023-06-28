@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://cdrmvxnxds42k"]
+[gd_scene load_steps=65 format=3 uid="uid://cdrmvxnxds42k"]
 
 [ext_resource type="Material" uid="uid://bf6h0fc6bg625" path="res://meshes/materials/Stone.tres" id="1_e8no1"]
 [ext_resource type="Material" uid="uid://l6csymeu2gyn" path="res://meshes/materials/WallHighContranstTriplanar.tres" id="2_i2mh8"]
@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://bscobm8fjo86y" path="res://scenes/LevelElements/pyramid_blocky.tscn" id="31_hnvn5"]
 [ext_resource type="PackedScene" uid="uid://bofwqitpcnw2q" path="res://meshes/Mesh_StoneTablet.glb" id="32_qlk2c"]
 [ext_resource type="PackedScene" uid="uid://bioterq8brdrr" path="res://scenes/LevelElements/big_arch.tscn" id="33_h61ty"]
+[ext_resource type="PackedScene" uid="uid://dig2ywk02orjr" path="res://scenes/LevelElements/special/grapple_target.tscn" id="34_p2us0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5as67"]
 
@@ -870,3 +871,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25364, 12.2317, -19.3077)
 
 [node name="Mesh_Archway3" parent="." instance=ExtResource("33_h61ty")]
 transform = Transform3D(1.665, 0, 0, 0, 1.665, 0, 0, 0, 1.665, 0.905874, -2.23731, -12.7798)
+
+[node name="Mesh_GrappleTarget" parent="." instance=ExtResource("34_p2us0")]
+transform = Transform3D(0.736298, 0, 0.676657, 0, 1, 0, -0.676657, 0, 0.736298, -13.7342, 4.33429, -6.56131)
+
+[node name="Mesh_GrappleTarget2" parent="." instance=ExtResource("34_p2us0")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -7.50153, 18.6271, 5.71391)
+
+[node name="Mesh_GrappleTarget3" parent="." instance=ExtResource("34_p2us0")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.498466, 18.6271, 17.7139)
