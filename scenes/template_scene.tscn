@@ -1,13 +1,13 @@
-[gd_scene load_steps=36 format=3 uid="uid://b1ctdsyvsieuh"]
+[gd_scene load_steps=36 format=3]
 
 [ext_resource type="Material" uid="uid://bf6h0fc6bg625" path="res://meshes/materials/Stone.tres" id="1_k3cgu"]
 [ext_resource type="Material" uid="uid://l6csymeu2gyn" path="res://meshes/materials/WallHighContranstTriplanar.tres" id="2_iyvwr"]
 [ext_resource type="Script" path="res://src/the_voxel_gi_doesnt_want_to_start_working.gd" id="6_x3aie"]
-[ext_resource type="PackedScene" uid="uid://cuokxwujesdvs" path="res://scenes/LevelElements/moving_platform_obj.tscn" id="7_35kfg"]
+[ext_resource type="PackedScene" uid="uid://cuokxwujesdvs" path="res://scenes/LevelElements/special/moving_platform_obj.tscn" id="7_35kfg"]
 [ext_resource type="PackedScene" uid="uid://ddq0a2k7ustx8" path="res://scenes/player.tscn" id="8_4pjm7"]
 [ext_resource type="PackedScene" uid="uid://pxsm5615eble" path="res://meshes/Mesh_Torch.glb" id="12_xwlig"]
-[ext_resource type="PackedScene" uid="uid://dyftocg1jx1pm" path="res://scenes/LevelElements/archway_fancy.tscn" id="13_rbrs5"]
-[ext_resource type="PackedScene" uid="uid://bsab0olfvy6e3" path="res://scenes/LevelElements/archway_wall.tscn" id="14_t78j7"]
+[ext_resource type="PackedScene" uid="uid://dyftocg1jx1pm" path="res://scenes/LevelElements/building blocks/archway_fancy.tscn" id="13_rbrs5"]
+[ext_resource type="PackedScene" uid="uid://bsab0olfvy6e3" path="res://scenes/LevelElements/building blocks/archway_wall.tscn" id="14_t78j7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5as67"]
 

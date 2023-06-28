@@ -1,15 +1,15 @@
-[gd_scene load_steps=41 format=3 uid="uid://cc0k7td14ywdr"]
+[gd_scene load_steps=41 format=3]
 
 [ext_resource type="Material" uid="uid://bf6h0fc6bg625" path="res://meshes/materials/Stone.tres" id="2_xqwiu"]
 [ext_resource type="Material" uid="uid://l6csymeu2gyn" path="res://meshes/materials/WallHighContranstTriplanar.tres" id="3_u2cwm"]
-[ext_resource type="PackedScene" uid="uid://crovn5k6jceyn" path="res://scenes/LevelElements/platform_a.tscn" id="5_hg1lc"]
-[ext_resource type="PackedScene" uid="uid://bwasa1hkbb8sn" path="res://scenes/LevelElements/push_block.tscn" id="6_1luqw"]
-[ext_resource type="PackedScene" uid="uid://dhaqqw780qk3a" path="res://scenes/LevelElements/platform_b.tscn" id="6_nnb5m"]
-[ext_resource type="PackedScene" uid="uid://cuokxwujesdvs" path="res://scenes/LevelElements/moving_platform_obj.tscn" id="8_dgtfo"]
+[ext_resource type="PackedScene" uid="uid://crovn5k6jceyn" path="res://scenes/LevelElements/building blocks/platform_a.tscn" id="5_hg1lc"]
+[ext_resource type="PackedScene" uid="uid://bwasa1hkbb8sn" path="res://scenes/LevelElements/special/push_block.tscn" id="6_1luqw"]
+[ext_resource type="PackedScene" uid="uid://dhaqqw780qk3a" path="res://scenes/LevelElements/building blocks/platform_b.tscn" id="6_nnb5m"]
+[ext_resource type="PackedScene" uid="uid://cuokxwujesdvs" path="res://scenes/LevelElements/special/moving_platform_obj.tscn" id="8_dgtfo"]
 [ext_resource type="VoxelGIData" uid="uid://c0utbxn1aicgl" path="res://baked/test_world_interior_voxel_gi_data.res" id="8_pp6m6"]
 [ext_resource type="PackedScene" uid="uid://ddq0a2k7ustx8" path="res://scenes/player.tscn" id="8_sm74i"]
 [ext_resource type="Script" path="res://src/the_voxel_gi_doesnt_want_to_start_working.gd" id="8_uvhrs"]
-[ext_resource type="PackedScene" uid="uid://csm3xijn7cq8x" path="res://scenes/LevelElements/pressure_plate.tscn" id="9_pw4mx"]
+[ext_resource type="PackedScene" uid="uid://csm3xijn7cq8x" path="res://scenes/LevelElements/special/pressure_plate.tscn" id="9_pw4mx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5as67"]
 
