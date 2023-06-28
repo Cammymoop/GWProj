@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://b7pnoyi33cnpx"]
+[gd_scene load_steps=46 format=3 uid="uid://b7pnoyi33cnpx"]
 
 [ext_resource type="Material" uid="uid://bf6h0fc6bg625" path="res://meshes/materials/Stone.tres" id="1_k3cgu"]
 [ext_resource type="Material" uid="uid://l6csymeu2gyn" path="res://meshes/materials/WallHighContranstTriplanar.tres" id="2_iyvwr"]
@@ -16,7 +16,6 @@
 [ext_resource type="Material" uid="uid://cpolpeq4n76ow" path="res://meshes/materials/Gold.tres" id="14_udr65"]
 [ext_resource type="PackedScene" uid="uid://cwbsc277cjifb" path="res://scenes/LevelElements/special/moving_platform_big.tscn" id="15_bw54j"]
 [ext_resource type="PackedScene" uid="uid://biwvlqh62yhtp" path="res://scenes/LevelElements/building blocks/pillar_small.tscn" id="16_crjff"]
-[ext_resource type="PackedScene" uid="uid://donak7j6fuc3r" path="res://scenes/LevelElements/special/moving_platform_wide.tscn" id="17_p78uj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5as67"]
 
@@ -475,6 +474,9 @@ transform = Transform3D(4.47989, 0, 0, 0, 7.56968, 0, 0, 0, 3.04556, 16.9869, -3
 [node name="Mesh_Platform_Small4" parent="." instance=ExtResource("9_mr3cc")]
 transform = Transform3D(2.28301, 0, 0, 0, 6.98422, 0, 0, 0, 2.28301, 5.25904, -2.76389, -18.8075)
 
+[node name="Mesh_Platform_Small6" parent="." instance=ExtResource("9_mr3cc")]
+transform = Transform3D(8.89529, 0, 0, 0, 8.30289, 0, 0, 0, 8.89529, -8.58649, -9.98628, -11.4035)
+
 [node name="Mesh_GrappleTarget" parent="." instance=ExtResource("10_gduh7")]
 transform = Transform3D(2.35722, 0, 0, 0, 2.35722, 0, 0, 0, 2.35722, 1.47989, 7.63986, 2.72573)
 
@@ -482,7 +484,7 @@ transform = Transform3D(2.35722, 0, 0, 0, 2.35722, 0, 0, 0, 2.35722, 1.47989, 7.
 transform = Transform3D(-1.67341e-07, -3.82832, 1.67341e-07, 0, -1.67341e-07, -3.82832, 3.82832, -1.67341e-07, 7.31472e-15, -14.0537, 18.6833, 6.63208)
 
 [node name="Mesh_GrappleTarget4" parent="." instance=ExtResource("10_gduh7")]
-transform = Transform3D(3.82832, 1.42109e-14, 0, 0, -1.67341e-07, -3.82832, -1.42109e-14, 3.82832, -1.67341e-07, -5.38942, 18.6833, -0.936711)
+transform = Transform3D(3.82832, 1.42109e-14, 0, 1.42109e-14, -3.82832, 3.34683e-07, 6.21176e-22, -3.34683e-07, -3.82832, -8.68293, 13.5582, 9.80911)
 
 [node name="Mesh_PlatformLong1" parent="." instance=ExtResource("11_gmyub")]
 transform = Transform3D(1.32876, 0, 0, 0, 2.28206, 0, 0, 0, 1.67902, -7.0808, -1.86648, 6.40691)
@@ -502,8 +504,14 @@ transform = Transform3D(2.11135, 0, 0, 0, 12.1608, 0, 0, 0, 1.5442, -19.7358, -1
 [node name="Mesh_PlatformLong7" parent="." instance=ExtResource("12_bguen")]
 transform = Transform3D(-1.59656e-07, 0, -1.5442, 0, 12.1608, 0, 3.6525, 0, -6.74993e-08, 7.41505, -1.86648, 16.1831)
 
+[node name="Mesh_PlatformLong9" parent="." instance=ExtResource("12_bguen")]
+transform = Transform3D(-1.59656e-07, 0, -1.5442, 0, 12.1608, 0, 3.6525, 0, -6.74993e-08, 7.41505, -8.57008, -1.82882)
+
 [node name="Mesh_PlatformLong5" parent="." instance=ExtResource("12_bguen")]
-transform = Transform3D(1.46874, 0, 0, 0, 12.1608, 0, 0, 0, 1.5442, -6.67403, 8.29022, 12.4515)
+transform = Transform3D(1.32915, 0, 0, 0, 12.1608, 0, 0, 0, 1.5442, -7.12829, 8.29022, 12.4515)
+
+[node name="Mesh_PlatformLong10" parent="." instance=ExtResource("12_bguen")]
+transform = Transform3D(0, 0, 0.371609, 0, 4.2542, 0, -1.62224, 0, 7.17185e-09, -2.83941, 8.29022, 4.06666)
 
 [node name="Mesh_PlatformLong4" parent="." instance=ExtResource("12_bguen")]
 transform = Transform3D(1.71089, 0, 0, 0, 0.7635, 0, 0, 0, 2.25892, -8.53227, 7.34667, 6.41179)
@@ -539,20 +547,11 @@ transform = Transform3D(2.71979, 0, 0, 0, -7.92572e-08, -2.71979, 0, 1.81319, -1
 [node name="Mesh_GrappleTarget3" parent="." instance=ExtResource("10_gduh7")]
 transform = Transform3D(1.59777, 0, 0, 0, 1.59777, 0, 0, 0, 1.59777, -9.16817, 12.8034, -20.5335)
 
-[node name="Mesh_PillarSmall2" parent="." instance=ExtResource("16_crjff")]
-transform = Transform3D(-2.71979, -1.58514e-07, 1.03933e-14, 0, -7.92572e-08, -2.71979, 2.37772e-07, -1.81319, 1.18886e-07, 15.8769, 12.7222, 24.4518)
-
 [node name="Mesh_GrappleTarget5" parent="." instance=ExtResource("10_gduh7")]
-transform = Transform3D(-1.59777, 0, -1.39682e-07, 0, 1.59777, 0, 1.39682e-07, 0, -1.59777, 15.8789, 12.8034, 20.9008)
+transform = Transform3D(-3.04108, 0, -2.6586e-07, 0, 3.04108, 0, 2.6586e-07, 0, -3.04108, 15.8789, 13.0397, 22.246)
 
 [node name="Node3D2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9984, 13.8128, 13.3012)
-
-[node name="MovingPlatform" parent="Node3D2" instance=ExtResource("17_p78uj")]
-transform = Transform3D(2.65681, 0, 0, 0, -1.16133e-07, 2.65681, 0, -2.65681, -1.16133e-07, -3.52293, 0, 0)
-activation_mode = 1
-end_position_node = NodePath("../EndPos")
-always_active = true
 
 [node name="EndPos" type="Marker3D" parent="Node3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.68832, 0, 0)
