@@ -505,7 +505,7 @@ transform = Transform3D(2.11135, 0, 0, 0, 12.1608, 0, 0, 0, 1.5442, -19.7358, -1
 transform = Transform3D(-1.59656e-07, 0, -1.5442, 0, 12.1608, 0, 3.6525, 0, -6.74993e-08, 7.41505, -1.86648, 16.1831)
 
 [node name="Mesh_PlatformLong9" parent="." instance=ExtResource("12_bguen")]
-transform = Transform3D(-1.59656e-07, 0, -1.5442, 0, 12.1608, 0, 3.6525, 0, -6.74993e-08, 7.41505, -8.57008, -1.82882)
+transform = Transform3D(-1.07046e-07, 0, -1.5442, 0, 12.1608, 0, 2.44893, 0, -6.74993e-08, 7.41505, -8.57008, -6.19792)
 
 [node name="Mesh_PlatformLong5" parent="." instance=ExtResource("12_bguen")]
 transform = Transform3D(1.32915, 0, 0, 0, 12.1608, 0, 0, 0, 1.5442, -7.12829, 8.29022, 12.4515)
