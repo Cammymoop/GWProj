@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwasa1hkbb8sn"]
+[gd_scene load_steps=13 format=3 uid="uid://bwasa1hkbb8sn"]
 
+[ext_resource type="Script" path="res://src/push_block.gd" id="1_5bmwi"]
 [ext_resource type="PackedScene" uid="uid://c1db11662jp0d" path="res://meshes/Mesh_PushBlock.glb" id="1_l1ao4"]
 [ext_resource type="Script" path="res://src/technicalStuff/beveled_box.gd" id="2_qulxp"]
 
@@ -12,6 +13,48 @@ script = ExtResource("2_qulxp")
 size = Vector3(1.75, 1.96, 1.75)
 bevel_amount = 0.2975
 
+[sub_resource type="Gradient" id="Gradient_cu8s5"]
+offsets = PackedFloat32Array(0, 0.177419, 0.919355)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rqu1e"]
+gradient = SubResource("Gradient_cu8s5")
+
+[sub_resource type="Curve" id="Curve_wqc3s"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.156682, 0.663636), 1.76865, 1.76865, 0, 0, Vector2(0.437788, 0.8), 0.0, 0.0, 0, 0, Vector2(1, 0.3), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_tdiit"]
+curve = SubResource("Curve_wqc3s")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_f7reu"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 0, 1)
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 0.25
+initial_velocity_max = 0.25
+tangential_accel_min = 0.2
+tangential_accel_max = 0.4
+scale_min = 0.25
+scale_max = 0.6
+scale_curve = SubResource("CurveTexture_tdiit")
+color = Color(0.992157, 0.905882, 0.619608, 1)
+color_ramp = SubResource("GradientTexture1D_rqu1e")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m4d1x"]
+transparency = 3
+alpha_hash_scale = 2.0
+alpha_antialiasing_mode = 0
+depth_draw_mode = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 1, 0.231373)
+proximity_fade_enabled = true
+proximity_fade_distance = 0.7
+
+[sub_resource type="SphereMesh" id="SphereMesh_wj3qm"]
+material = SubResource("StandardMaterial3D_m4d1x")
+
 [node name="PushBlock" type="RigidBody3D"]
 collision_layer = 3
 collision_mask = 3
@@ -20,6 +63,7 @@ physics_material_override = SubResource("PhysicsMaterial_tp5l3")
 can_sleep = false
 lock_rotation = true
 linear_damp = 1.0
+script = ExtResource("1_5bmwi")
 
 [node name="Mesh_PushBlock" parent="." instance=ExtResource("1_l1ao4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
@@ -27,3 +71,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.013, 0)
 shape = SubResource("ConvexPolygonShape3D_l5lld")
+
+[node name="Dust" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+emitting = false
+amount = 128
+lifetime = 1.7
+explosiveness = 0.11
+fixed_fps = 60
+visibility_aabb = AABB(-4, -2.00778, -4, 8, 7.36614, 8)
+draw_order = 3
+process_material = SubResource("ParticleProcessMaterial_f7reu")
+draw_pass_1 = SubResource("SphereMesh_wj3qm")
