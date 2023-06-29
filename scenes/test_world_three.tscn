@@ -1,7 +1,8 @@
-[gd_scene load_steps=46 format=3 uid="uid://b7pnoyi33cnpx"]
+[gd_scene load_steps=47 format=3 uid="uid://cwpnnd0rnove4"]
 
 [ext_resource type="Material" uid="uid://bf6h0fc6bg625" path="res://meshes/materials/Stone.tres" id="1_k3cgu"]
 [ext_resource type="Material" uid="uid://l6csymeu2gyn" path="res://meshes/materials/WallHighContranstTriplanar.tres" id="2_iyvwr"]
+[ext_resource type="VoxelGIData" uid="uid://b4r4thwkqne0j" path="res://baked/test_world_3_gi.res" id="3_jj6i8"]
 [ext_resource type="Script" path="res://src/the_voxel_gi_doesnt_want_to_start_working.gd" id="6_x3aie"]
 [ext_resource type="PackedScene" uid="uid://cuokxwujesdvs" path="res://scenes/LevelElements/special/moving_platform_obj.tscn" id="7_35kfg"]
 [ext_resource type="PackedScene" uid="uid://ddq0a2k7ustx8" path="res://scenes/player.tscn" id="8_4pjm7"]
@@ -239,7 +240,8 @@ mesh = SubResource("BoxMesh_oc7v5")
 surface_material_override/0 = ExtResource("2_iyvwr")
 
 [node name="VoxelGI" type="VoxelGI" parent="."]
-size = Vector3(63.057, 33.549, 56.991)
+size = Vector3(63.057, 40.1795, 56.991)
+data = ExtResource("3_jj6i8")
 script = ExtResource("6_x3aie")
 
 [node name="FogVolume" type="FogVolume" parent="."]

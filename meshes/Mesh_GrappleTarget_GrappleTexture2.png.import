@@ -3,21 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://fag7ggwc6537"
-path.s3tc="res://.godot/imported/Mesh_GrappleTarget_GrappleTexture2.png-10bcdf63d5710709815eca745dc16d39.s3tc.ctex"
+path="res://.godot/imported/Mesh_GrappleTarget_GrappleTexture2.png-10bcdf63d5710709815eca745dc16d39.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={}
 
 [deps]
 
 source_file="res://meshes/Mesh_GrappleTarget_GrappleTexture2.png"
-dest_files=["res://.godot/imported/Mesh_GrappleTarget_GrappleTexture2.png-10bcdf63d5710709815eca745dc16d39.s3tc.ctex"]
+dest_files=["res://.godot/imported/Mesh_GrappleTarget_GrappleTexture2.png-10bcdf63d5710709815eca745dc16d39.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

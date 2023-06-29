@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3]
+[gd_scene load_steps=36 format=3 uid="uid://hxd2oxfpr5vm"]
 
 [ext_resource type="Material" uid="uid://bf6h0fc6bg625" path="res://meshes/materials/Stone.tres" id="1_k3cgu"]
 [ext_resource type="Material" uid="uid://l6csymeu2gyn" path="res://meshes/materials/WallHighContranstTriplanar.tres" id="2_iyvwr"]

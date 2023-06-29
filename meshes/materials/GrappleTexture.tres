@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://cuq82umy7qxc5"]
+
+[ext_resource type="Texture2D" uid="uid://fag7ggwc6537" path="res://meshes/Mesh_GrappleTarget_GrappleTexture2.png" id="1_dgqi0"]
+[ext_resource type="Texture2D" uid="uid://bt3tpahj6b6ww" path="res://meshes/Mesh_GrappleTarget_GrappleNormal.png" id="2_gjn2q"]
+
+[resource]
+resource_name = "GrappleTexture"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_dgqi0")
+emission_enabled = true
+normal_enabled = true
+normal_scale = 2.12
+normal_texture = ExtResource("2_gjn2q")
