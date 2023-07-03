@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://dx7sphxw1jbxo"]
+[gd_scene load_steps=50 format=3 uid="uid://dx7sphxw1jbxo"]
 
 [ext_resource type="Material" uid="uid://bf6h0fc6bg625" path="res://meshes/materials/Stone.tres" id="1_wo1jc"]
 [ext_resource type="Material" uid="uid://l6csymeu2gyn" path="res://meshes/materials/WallHighContranstTriplanar.tres" id="2_60idd"]
@@ -13,6 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://crovn5k6jceyn" path="res://scenes/LevelElements/building blocks/platform_a.tscn" id="11_iy7cc"]
 [ext_resource type="PackedScene" uid="uid://bwdchgsmn2d0o" path="res://scenes/LevelElements/building blocks/platform_small.tscn" id="11_vcfee"]
 [ext_resource type="PackedScene" uid="uid://cwbsc277cjifb" path="res://scenes/LevelElements/special/moving_platform_big.tscn" id="13_mufnl"]
+[ext_resource type="PackedScene" uid="uid://donak7j6fuc3r" path="res://scenes/LevelElements/special/moving_platform_wide.tscn" id="14_yvb6w"]
+[ext_resource type="PackedScene" uid="uid://bwasa1hkbb8sn" path="res://scenes/LevelElements/special/push_block.tscn" id="15_7rkcc"]
+[ext_resource type="PackedScene" uid="uid://csm3xijn7cq8x" path="res://scenes/LevelElements/special/pressure_plate.tscn" id="16_0gnag"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5as67"]
 
@@ -183,13 +186,27 @@ size = Vector3(3, 20.789, 36.247)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1jmj2"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_wwo16"]
+material = ExtResource("2_60idd")
+size = Vector3(25, 25, 25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nfxki"]
+size = Vector3(25, 25, 25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_k3tnr"]
+material = ExtResource("2_60idd")
+size = Vector3(25, 25, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s1514"]
+size = Vector3(25, 25, 1)
+
 [node name="TestWorld" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_3x11q")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.0459738, -0.299217, 0.953077, -0.0579027, 0.951684, 0.301572, -0.997263, -0.0690501, 0.0264271, 2.18766, 0, 0)
+transform = Transform3D(0.0459738, -0.299217, 0.953077, -0.0579027, 0.951683, 0.301572, -0.997263, -0.0690502, 0.026427, 2.18766, 0, 0)
 visible = false
 light_color = Color(1, 0.635294, 0.505882, 1)
 light_energy = 1.4
@@ -237,12 +254,12 @@ mesh = SubResource("BoxMesh_oc7v5")
 surface_material_override/0 = ExtResource("2_60idd")
 
 [node name="VoxelGI" type="VoxelGI" parent="."]
-size = Vector3(63.057, 33.549, 56.991)
+size = Vector3(68.255, 33.549, 78.8814)
 script = ExtResource("3_qni1y")
 
 [node name="FogVolume" type="FogVolume" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.26565, -1.43403, -0.645203)
-size = Vector3(51.2275, 0.962428, 33.6003)
+size = Vector3(51.2275, 0.962428, 81.776)
 material = SubResource("FogMaterial_q1jo2")
 
 [node name="DustParticles" type="GPUParticles3D" parent="."]
@@ -252,7 +269,7 @@ cast_shadow = 0
 gi_mode = 0
 amount = 36
 lifetime = 12.0
-visibility_aabb = AABB(-18.9775, -17.1042, -16.6132, 37.955, 34.2083, 33.2264)
+visibility_aabb = AABB(-18.9775, -17.1042, -37.9792, 37.955, 34.2083, 75.9584)
 process_material = SubResource("ParticleProcessMaterial_kqnbj")
 draw_pass_1 = SubResource("QuadMesh_v1njt")
 
@@ -354,7 +371,7 @@ omni_range = 50.0
 omni_attenuation = 1.27456
 
 [node name="Mesh_Torch4" parent="." instance=ExtResource("6_ktwi5")]
-transform = Transform3D(-1, 4.64383e-08, -7.40691e-08, 0, 0.847252, 0.531192, 8.74228e-08, 0.531192, -0.847252, 15.8546, 7.03692, -38.2253)
+transform = Transform3D(-1, 4.64383e-08, -7.40691e-08, 0, 0.847252, 0.531192, 8.74228e-08, 0.531192, -0.847252, 15.8546, 22.2311, -38.2253)
 
 [node name="GPUParticles3D2" type="GPUParticles3D" parent="Mesh_Torch4"]
 transform = Transform3D(1, 0, 0, 0, 0.847252, -0.531192, 0, 0.531192, 0.847252, 0.00576758, 0.900683, 0.040823)
@@ -377,7 +394,7 @@ omni_range = 50.0
 omni_attenuation = 1.27456
 
 [node name="Mesh_Torch6" parent="." instance=ExtResource("6_ktwi5")]
-transform = Transform3D(-1, 4.64383e-08, -7.40691e-08, 0, 0.847252, 0.531192, 8.74228e-08, 0.531192, -0.847252, -13.1454, 7.03692, -38.2253)
+transform = Transform3D(-1, 4.64383e-08, -7.40691e-08, 0, 0.847252, 0.531192, 8.74228e-08, 0.531192, -0.847252, -13.1454, 22.2311, -38.2253)
 
 [node name="GPUParticles3D2" type="GPUParticles3D" parent="Mesh_Torch6"]
 transform = Transform3D(1, 0, 0, 0, 0.847252, -0.531192, 0, 0.531192, 0.847252, 0.00576758, 0.900683, 0.040823)
@@ -399,11 +416,86 @@ shadow_blur = 1.6
 omni_range = 50.0
 omni_attenuation = 1.27456
 
+[node name="Mesh_Torch7" parent="." instance=ExtResource("6_ktwi5")]
+transform = Transform3D(1.31134e-07, 0.531192, -0.847252, -1.89462e-15, 0.847252, 0.531192, 1, -6.96574e-08, 1.11104e-07, -18.6763, 17.0099, 1.1785)
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="Mesh_Torch7"]
+transform = Transform3D(1, 0, 0, 0, 0.847252, -0.531192, 0, 0.531192, 0.847252, 0.00576758, 0.900683, 0.040823)
+amount = 50
+lifetime = 1.4
+visibility_aabb = AABB(-2.87438, -0.778281, -2.10412, 5.74876, 6.77995, 4.20824)
+process_material = SubResource("ParticleProcessMaterial_13s5i")
+draw_pass_1 = SubResource("QuadMesh_madmu")
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Mesh_Torch7"]
+transform = Transform3D(1, 0, 0, 0, 0.847252, -0.531192, 0, 0.531192, 0.847252, -0.00684428, 1.23598, -0.425689)
+light_color = Color(0.72549, 0.431373, 0, 1)
+light_energy = 12.0
+light_indirect_energy = 6.292
+light_specular = 2.867
+light_bake_mode = 1
+shadow_enabled = true
+shadow_blur = 1.6
+omni_range = 50.0
+omni_attenuation = 1.27456
+
+[node name="Mesh_Torch8" parent="." instance=ExtResource("6_ktwi5")]
+transform = Transform3D(-2.18557e-07, -0.531192, 0.847252, -9.00005e-15, 0.847252, 0.531192, -1, 1.16096e-07, -1.85173e-07, 21.4741, 17.0099, 1.1785)
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="Mesh_Torch8"]
+transform = Transform3D(1, 0, 0, 0, 0.847252, -0.531192, 0, 0.531192, 0.847252, 0.00576758, 0.900683, 0.040823)
+amount = 50
+lifetime = 1.4
+visibility_aabb = AABB(-2.87438, -0.778281, -2.10412, 5.74876, 6.77995, 4.20824)
+process_material = SubResource("ParticleProcessMaterial_13s5i")
+draw_pass_1 = SubResource("QuadMesh_madmu")
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Mesh_Torch8"]
+transform = Transform3D(1, 0, 0, 0, 0.847252, -0.531192, 0, 0.531192, 0.847252, -0.00684428, 1.23598, -0.425689)
+light_color = Color(0.72549, 0.431373, 0, 1)
+light_energy = 12.0
+light_indirect_energy = 6.292
+light_specular = 2.867
+light_bake_mode = 1
+shadow_enabled = true
+shadow_blur = 1.6
+omni_range = 50.0
+omni_attenuation = 1.27456
+
 [node name="Mesh_Archway" parent="." instance=ExtResource("7_wvoq3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28911, -0.436239, 36.3296)
 
 [node name="Mesh_ArchwayWall2" parent="." instance=ExtResource("8_7asvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35255, -0.128729, 37.6051)
+
+[node name="Mesh_Torch3" parent="." instance=ExtResource("6_ktwi5")]
+transform = Transform3D(-4.37114e-08, 0.531192, -0.847252, 0, 0.847252, 0.531192, 1, 2.32191e-08, -3.70346e-08, -17.1098, 12.8443, -31.5908)
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="Mesh_Torch3"]
+transform = Transform3D(1, 0, 0, 0, 0.847252, -0.531192, 0, 0.531192, 0.847252, 0.00576758, 0.900683, 0.040823)
+amount = 50
+lifetime = 1.4
+visibility_aabb = AABB(-2.87438, -0.778281, -2.10412, 5.74876, 6.77995, 4.20824)
+process_material = SubResource("ParticleProcessMaterial_13s5i")
+draw_pass_1 = SubResource("QuadMesh_madmu")
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Mesh_Torch3"]
+transform = Transform3D(1, 0, 0, 0, 0.847252, -0.531192, 0, 0.531192, 0.847252, -0.00684428, 1.23598, -0.425689)
+light_color = Color(0.72549, 0.431373, 0, 1)
+light_energy = 12.0
+light_indirect_energy = 6.292
+light_specular = 2.867
+light_bake_mode = 1
+shadow_enabled = true
+shadow_blur = 1.6
+omni_range = 50.0
+omni_attenuation = 1.27456
+
+[node name="Mesh_Archway2" parent="." instance=ExtResource("7_wvoq3")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17.3019, 7.13649, -31.5467)
+
+[node name="Mesh_ArchwayWall3" parent="." instance=ExtResource("8_7asvh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -18.5774, 7.444, -31.4832)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(2.43438, 0, 0, 0, 2.43438, 0, 0, 0, 2.43438, 25.3138, 9.27174, 0)
@@ -444,6 +536,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, -1.788, 17.1)
 [node name="PlatformA3" parent="." instance=ExtResource("11_iy7cc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, -1.788, 1.1)
 
+[node name="PlatformA5" parent="." instance=ExtResource("11_iy7cc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.08031, 6.42584, 1.1)
+
+[node name="PlatformA6" parent="." instance=ExtResource("11_iy7cc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.91969, 6.42584, 1.1)
+
 [node name="PlatformA4" parent="." instance=ExtResource("11_iy7cc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.4, -1.788, 1.1)
 
@@ -460,3 +558,296 @@ always_active = true
 
 [node name="EndPos" type="Marker3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.05567, 0, 0)
+
+[node name="Node3D3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.25255, 7.91989, 10.2188)
+
+[node name="MovingPlatform" parent="Node3D3" instance=ExtResource("13_mufnl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.225597, 0, 0)
+travelTime = 3.0
+activation_mode = 1
+end_position_node = NodePath("../EndPos")
+always_active = true
+
+[node name="EndPos" type="Marker3D" parent="Node3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.60475, 0, 0)
+
+[node name="Node3D4" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.92563, 7.91989, 10.2188)
+
+[node name="MovingPlatform" parent="Node3D4" instance=ExtResource("13_mufnl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0924034, 0, 0)
+travelTime = 3.0
+activation_mode = 1
+end_position_node = NodePath("../EndPos")
+always_active = true
+
+[node name="EndPos" type="Marker3D" parent="Node3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2938, 0, 0)
+
+[node name="Node3D2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.84167, -0.377228, 1.12046)
+
+[node name="EndPos" type="Marker3D" parent="Node3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.31445, 0)
+
+[node name="MovingPlatform" parent="Node3D2" instance=ExtResource("14_yvb6w")]
+transform = Transform3D(1.31607, 0, 0, 0, 1.31607, 0, 0, 0, 1.31607, 0, 0.00435704, 0)
+travelTime = 4.0
+delay = 1.5
+activation_mode = 1
+end_position_node = NodePath("../EndPos")
+always_active = true
+
+[node name="Node3D15" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.54166, -0.377228, -3.83584)
+
+[node name="EndPos" type="Marker3D" parent="Node3D15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.335058, 0)
+
+[node name="MovingPlatform" parent="Node3D15" instance=ExtResource("14_yvb6w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.61577, 0)
+travelTime = 4.0
+delay = 1.5
+activation_mode = 5
+activator = NodePath("../../PressurePlate2")
+end_position_node = NodePath("../EndPos")
+
+[node name="Node3D16" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.54166, -0.377228, -5.84593)
+
+[node name="EndPos" type="Marker3D" parent="Node3D16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0271, 0)
+
+[node name="MovingPlatform" parent="Node3D16" instance=ExtResource("14_yvb6w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.616, 0)
+travelTime = 4.0
+delay = 1.5
+activation_mode = 5
+activator = NodePath("../../PressurePlate2")
+end_position_node = NodePath("../EndPos")
+
+[node name="Mesh_Platform_Small2" parent="." instance=ExtResource("11_vcfee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.15799, 6.40617, 6.60935)
+
+[node name="Mesh_Platform_Small3" parent="." instance=ExtResource("11_vcfee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.84201, 6.40617, 6.60935)
+
+[node name="Box_Platform" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.1566, 0, 0, 0, 2.1566, 0, 0, 0, 2.1566, 38.5689, -19.3767, -39.9691)
+mesh = SubResource("BoxMesh_wwo16")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Box_Platform"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box_Platform/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_nfxki")
+
+[node name="Box_Platform2" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.1566, 0, 0, 0, 2.1566, 0, 0, 0, 2.1566, 38.6786, -18.7727, -13.5737)
+mesh = SubResource("BoxMesh_k3tnr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Box_Platform2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box_Platform2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_s1514")
+
+[node name="Box_Platform3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-9.42679e-08, 0, 2.1566, 0, 2.1566, 0, -2.1566, 0, -9.42679e-08, 10.6464, -18.7727, -39.4451)
+mesh = SubResource("BoxMesh_k3tnr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Box_Platform3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box_Platform3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_s1514")
+
+[node name="Box_Platform7" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.1566, 0, 0, 0, 2.1566, 0, 0, 0, 2.1566, 17.2805, -23.3379, -40.9001)
+mesh = SubResource("BoxMesh_wwo16")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Box_Platform7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box_Platform7/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_nfxki")
+
+[node name="Box_Platform8" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.1566, 0, 0, 0, 2.1566, 0, 0, 0, 2.1566, 17.3902, -22.7339, -14.5047)
+mesh = SubResource("BoxMesh_k3tnr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Box_Platform8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box_Platform8/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_s1514")
+
+[node name="Box_Platform9" type="MeshInstance3D" parent="."]
+transform = Transform3D(-9.42679e-08, 0, 2.1566, 0, 2.1566, 0, -2.1566, 0, -9.42679e-08, -10.642, -22.7339, -40.376)
+mesh = SubResource("BoxMesh_k3tnr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Box_Platform9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box_Platform9/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_s1514")
+
+[node name="Box_Platform4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-9.42679e-08, 0, 2.1566, 0, 2.1566, 0, -2.1566, 0, -9.42679e-08, -36.8671, -19.3767, -51.1472)
+mesh = SubResource("BoxMesh_wwo16")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Box_Platform4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box_Platform4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_nfxki")
+
+[node name="Box_Platform5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-9.42679e-08, 0, 2.1566, 0, 2.1566, 0, -2.1566, 0, -9.42679e-08, -10.4717, -18.7727, -51.257)
+mesh = SubResource("BoxMesh_k3tnr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Box_Platform5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box_Platform5/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_s1514")
+
+[node name="Box_Platform6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.1566, 0, -1.88536e-07, 0, 2.1566, 0, 1.88536e-07, 0, -2.1566, -36.343, -18.7727, -23.2248)
+mesh = SubResource("BoxMesh_k3tnr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Box_Platform6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box_Platform6/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_s1514")
+
+[node name="Node3D5" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1314, 7.93476, 1.22898)
+
+[node name="MovingPlatform" parent="Node3D5" instance=ExtResource("13_mufnl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.35176, 0)
+travelTime = 3.0
+delay = 1.0
+activation_mode = 1
+end_position_node = NodePath("../EndPos")
+always_active = true
+
+[node name="EndPos" type="Marker3D" parent="Node3D5"]
+
+[node name="Node3D8" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.89392, -2.07479, 27.1103)
+
+[node name="MovingPlatform" parent="Node3D8" instance=ExtResource("13_mufnl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.78437, 0)
+travelTime = 3.0
+delay = 1.0
+activation_mode = 1
+end_position_node = NodePath("../EndPos")
+always_active = true
+
+[node name="EndPos" type="Marker3D" parent="Node3D8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10063, 0)
+
+[node name="Node3D7" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1314, 7.93476, -7.96179)
+
+[node name="MovingPlatform" parent="Node3D7" instance=ExtResource("13_mufnl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.35176, 0)
+travelTime = 3.0
+delay = 1.0
+activation_mode = 1
+end_position_node = NodePath("../EndPos")
+always_active = true
+
+[node name="EndPos" type="Marker3D" parent="Node3D7"]
+
+[node name="Node3D6" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1314, 7.93476, -3.36585)
+
+[node name="MovingPlatform" parent="Node3D6" instance=ExtResource("13_mufnl")]
+travelTime = 3.0
+delay = 1.0
+activation_mode = 1
+end_position_node = NodePath("../EndPos")
+always_active = true
+
+[node name="EndPos" type="Marker3D" parent="Node3D6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.352, 0)
+
+[node name="PushBlock" parent="." instance=ExtResource("15_7rkcc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0371, 8.86343, -19.0616)
+
+[node name="Node3D9" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.33804, 3.86605, -19.3375)
+
+[node name="MovingPlatform" parent="Node3D9" instance=ExtResource("13_mufnl")]
+activation_mode = 2
+activator = NodePath("../../PressurePlate")
+end_position_node = NodePath("../EndPos")
+
+[node name="EndPos" type="Marker3D" parent="Node3D9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.13597, 0)
+
+[node name="Node3D14" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.46735, 3.86605, -35.5787)
+
+[node name="MovingPlatform2" parent="Node3D14" instance=ExtResource("14_yvb6w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.455623, 0)
+activation_mode = 1
+end_position_node = NodePath("../EndPos")
+always_active = true
+
+[node name="EndPos" type="Marker3D" parent="Node3D14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.13597, 0)
+
+[node name="Node3D10" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.257867, 3.86605, -19.3375)
+
+[node name="MovingPlatform" parent="Node3D10" instance=ExtResource("13_mufnl")]
+activation_mode = 2
+activator = NodePath("../../PressurePlate")
+end_position_node = NodePath("../EndPos")
+
+[node name="EndPos" type="Marker3D" parent="Node3D10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.13597, 0)
+
+[node name="Node3D11" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.257867, 3.86605, -25.785)
+
+[node name="MovingPlatform" parent="Node3D11" instance=ExtResource("13_mufnl")]
+activation_mode = 2
+activator = NodePath("../../PressurePlate")
+end_position_node = NodePath("../EndPos")
+
+[node name="EndPos" type="Marker3D" parent="Node3D11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.13597, 0)
+
+[node name="Node3D12" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.257867, 3.86605, -31.435)
+
+[node name="MovingPlatform" parent="Node3D12" instance=ExtResource("13_mufnl")]
+activation_mode = 2
+activator = NodePath("../../PressurePlate")
+end_position_node = NodePath("../EndPos")
+
+[node name="EndPos" type="Marker3D" parent="Node3D12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.13597, 0)
+
+[node name="Node3D13" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.78839, 3.86605, -31.435)
+
+[node name="MovingPlatform" parent="Node3D13" instance=ExtResource("13_mufnl")]
+activation_mode = 2
+activator = NodePath("../../PressurePlate")
+end_position_node = NodePath("../EndPos")
+
+[node name="EndPos" type="Marker3D" parent="Node3D13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.13597, 0)
+
+[node name="PressurePlate" parent="." instance=ExtResource("16_0gnag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.482, 7.58077, -26.1952)
+
+[node name="PressurePlate2" parent="." instance=ExtResource("16_0gnag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38811, -0.0752723, 1.20261)
