@@ -37,7 +37,7 @@ update_rotation = false
 update_scale = false
 
 [node name="Model" parent="." instance=ExtResource("2_4in74")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.18, -0.924, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.924, 0)
 
 [node name="Node" type="Node" parent="."]
 
