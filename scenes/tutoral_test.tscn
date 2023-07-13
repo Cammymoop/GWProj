@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://donak7j6fuc3r" path="res://scenes/LevelElements/special/moving_platform_wide.tscn" id="14_yvb6w"]
 [ext_resource type="PackedScene" uid="uid://bwasa1hkbb8sn" path="res://scenes/LevelElements/special/push_block.tscn" id="15_7rkcc"]
 [ext_resource type="PackedScene" uid="uid://csm3xijn7cq8x" path="res://scenes/LevelElements/special/pressure_plate.tscn" id="16_0gnag"]
-[ext_resource type="PackedScene" uid="uid://8nsdqk6f7niu" path="res://scenes/LevelElements/pickups/gem_pickup1.tscn" id="17_yjfr5"]
+[ext_resource type="PackedScene" uid="uid://dy48vn6b25n60" path="res://scenes/LevelElements/pickups/gem_pickup.tscn" id="17_4peyf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5as67"]
 
@@ -877,8 +877,41 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38811, -0.0752723, -0.83533
 [node name="PlatformB2" parent="." instance=ExtResource("9_hqwrx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.1064, -1.78817, 33.6839)
 
-[node name="Node3D17" parent="." instance=ExtResource("17_yjfr5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.4246, -0.0351931, 22.892)
+[node name="Area3D" parent="." instance=ExtResource("17_4peyf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.27936, -0.0383333, 28.8947)
 
-[node name="Node3D18" parent="." instance=ExtResource("17_yjfr5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.4246, -0.0351931, 26.6255)
+[node name="Area3D2" parent="." instance=ExtResource("17_4peyf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.27936, -0.0383333, 27.1998)
+
+[node name="Area3D3" parent="." instance=ExtResource("17_4peyf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.27936, -0.0383333, 25.6667)
+
+[node name="Area3D4" parent="." instance=ExtResource("17_4peyf")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.6713, -0.0383328, 17.0827)
+
+[node name="Area3D5" parent="." instance=ExtResource("17_4peyf")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.3663, -0.0383328, 17.0827)
+
+[node name="Area3D6" parent="." instance=ExtResource("17_4peyf")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13.8993, -0.0383328, 17.0827)
+
+[node name="Area3D7" parent="." instance=ExtResource("17_4peyf")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 17.3494, -0.0383328, 23.168)
+
+[node name="Area3D8" parent="." instance=ExtResource("17_4peyf")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 17.3494, -0.0383328, 24.8629)
+
+[node name="Area3D9" parent="." instance=ExtResource("17_4peyf")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 17.3494, -0.0383328, 26.396)
+
+[node name="Area3D10" parent="." instance=ExtResource("17_4peyf")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 17.4625, -0.0383328, 32.8092)
+
+[node name="Area3D11" parent="." instance=ExtResource("17_4peyf")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 17.4625, -0.0383328, 34.8092)
+
+[node name="Area3D12" parent="." instance=ExtResource("17_4peyf")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 19.4625, -0.0383328, 32.8092)
+
+[node name="Area3D13" parent="." instance=ExtResource("17_4peyf")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 19.4625, -0.0383328, 34.8092)

@@ -6,15 +6,18 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_qbn05"]
 size = Vector3(0.437386, 0.509748, 0.51618)
 
-[node name="Node3D" type="Node3D"]
+[node name="gem_pickup" type="Node3D"]
 script = ExtResource("1_qjkhy")
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.253646, 0)
-
-[node name="Mesh_Gem" parent="Area3D" instance=ExtResource("2_7edmn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.250854, 0)
+collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_qbn05")
 disabled = true
+
+[node name="Mesh_Gem" parent="." instance=ExtResource("2_7edmn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.002792, 0)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

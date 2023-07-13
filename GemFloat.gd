@@ -1,5 +1,7 @@
 extends Node3D
 
+@onready var particle = preload("res://scenes/LevelElements/particles/gem_pickup_particle.tscn")
+
 var start_pos : Vector3
 var end_pos : Vector3
 var rotationVector : Vector3
@@ -31,3 +33,12 @@ func setup_spinTween():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
+
+func _on_body_entered(body):
+	var particleInst = particle.instantiate()
+	get_node("/root").add_child(particleInst)
+	particleInst.global_position = global_position + Vector3(0,0.5,0)
+	queue_free()
+
