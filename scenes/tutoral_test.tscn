@@ -948,6 +948,54 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 17.349
 [node name="Area3D9" parent="." instance=ExtResource("17_4peyf")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 17.3494, -0.0383328, 26.396)
 
+[node name="Area3D22" parent="." instance=ExtResource("17_4peyf")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 17.3494, -0.0383328, 10.168)
+
+[node name="Area3D23" parent="." instance=ExtResource("17_4peyf")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 17.3494, -0.0383328, 11.8629)
+
+[node name="Area3D24" parent="." instance=ExtResource("17_4peyf")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 17.3494, -0.0383328, 13.396)
+
+[node name="Area3D25" parent="." instance=ExtResource("17_4peyf")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.90059, -0.0383328, 0.808966)
+
+[node name="Area3D26" parent="." instance=ExtResource("17_4peyf")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.46016, -0.0383328, 0.808966)
+
+[node name="Area3D27" parent="." instance=ExtResource("17_4peyf")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.0636, -0.0383328, 0.808966)
+
+[node name="Area3D28" parent="." instance=ExtResource("17_4peyf")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.57594, 8.17306, 10.2717)
+
+[node name="Area3D31" parent="." instance=ExtResource("17_4peyf")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.17431, 8.17306, 10.2717)
+
+[node name="Area3D29" parent="." instance=ExtResource("17_4peyf")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0163789, 8.17306, 10.2717)
+
+[node name="Area3D30" parent="." instance=ExtResource("17_4peyf")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.58707, 8.17306, 10.2717)
+
+[node name="Area3D32" parent="." instance=ExtResource("17_4peyf")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.14728, 8.17306, 10.2717)
+
+[node name="Area3D33" parent="." instance=ExtResource("17_4peyf")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.33671, 8.32026, -19.3371)
+
+[node name="Area3D34" parent="." instance=ExtResource("17_4peyf")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.264042, 8.32026, -19.3371)
+
+[node name="Area3D35" parent="." instance=ExtResource("17_4peyf")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.264042, 8.32026, -25.785)
+
+[node name="Area3D36" parent="." instance=ExtResource("17_4peyf")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.264042, 8.32026, -31.4382)
+
+[node name="Area3D37" parent="." instance=ExtResource("17_4peyf")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.79514, 8.32026, -31.4382)
+
 [node name="Area3D10" parent="." instance=ExtResource("17_4peyf")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 17.4625, -0.0383328, 32.8092)
 
@@ -961,4 +1009,4 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 19.462
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 19.4625, -0.0383328, 34.8092)
 
 [node name="Gem_pickup_object" parent="." instance=ExtResource("18_s600q")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -15.6374, 7.5808, 25.8557)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6374, 7.5808, 25.8325)
