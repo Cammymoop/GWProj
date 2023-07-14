@@ -9,6 +9,8 @@ var controller_look_sensitivity = 12
 
 var floored := false
 
+var gems_collected = 0
+
 const GRAPPLE_LAYER := 3
 
 @export var GRAPPLE_OFFSET := 0.6
@@ -246,3 +248,6 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 		)
 		state.transform.basis = global_transform.basis.slerp(rotated, 0.2)
 	$Model.moving = true if move_vec else false
+	
+func add_gem(ammount) -> void:
+	gems_collected += ammount

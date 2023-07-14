@@ -40,5 +40,7 @@ func _on_body_entered(body):
 	var particleInst = particle.instantiate()
 	get_node("/root").add_child(particleInst)
 	particleInst.global_position = global_position + Vector3(0,0.5,0)
+	if body.has_method("add_gem"):
+		body.add_gem(1)
 	queue_free()
 
