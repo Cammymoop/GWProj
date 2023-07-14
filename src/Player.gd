@@ -10,6 +10,7 @@ var controller_look_sensitivity = 12
 var floored := false
 
 var gems_collected = 0
+var special_collected = 0
 
 const GRAPPLE_LAYER := 3
 
@@ -251,3 +252,6 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 	
 func add_gem(ammount) -> void:
 	gems_collected += ammount
+	
+func add_special(ammount) -> void:
+	special_collected += ammount

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvqlaxk4kvs7"]
+
+[ext_resource type="Script" path="res://GemFloat.gd" id="1_2uq1r"]
+[ext_resource type="PackedScene" uid="uid://bh6m7d8kips34" path="res://meshes/new_scenes/mesh_gem_green.tscn" id="2_ksjf6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m2rq2"]
+size = Vector3(0.437386, 0.509748, 0.51618)
+
+[node name="Gem_pickup_object" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_2uq1r")
+isSpecial = true
+
+[node name="Mesh_Gem2" parent="." instance=ExtResource("2_ksjf6")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.379647, 0)
+shape = SubResource("BoxShape3D_m2rq2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

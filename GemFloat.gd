@@ -1,11 +1,12 @@
 extends Node3D
 
 @onready var particle = preload("res://scenes/LevelElements/particles/gem_pickup_particle.tscn")
-
+@onready var special_particle = preload("res://scenes/LevelElements/particles/special_pickup_particle.tscn")
 var start_pos : Vector3
 var end_pos : Vector3
 var rotationVector : Vector3
 @export var travelTime : float = 2
+@export var isSpecial : bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -37,10 +38,20 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	var particleInst = particle.instantiate()
-	get_node("/root").add_child(particleInst)
-	particleInst.global_position = global_position + Vector3(0,0.5,0)
-	if body.has_method("add_gem"):
-		body.add_gem(1)
+	
+	
+	
+	if isSpecial:
+		var specialParticleInst = special_particle.instantiate()
+		get_node("/root").add_child(specialParticleInst)
+		specialParticleInst.global_position = global_position + Vector3(0,0.5,0)
+		if body.has_method("add_special"):
+			body.add_special(1)
+	else:
+		var particleInst = particle.instantiate()
+		get_node("/root").add_child(particleInst)
+		particleInst.global_position = global_position + Vector3(0,0.5,0)
+		if body.has_method("add_gem"):
+			body.add_gem(1)
 	queue_free()
 

@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://b0bl2q7ftpptt"]
+
+[ext_resource type="Script" path="res://scenes/LevelElements/particles/gem_pickup_particle.gd" id="1_alkc7"]
+
+[sub_resource type="Curve" id="Curve_g3atk"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.428571, 0.0090909), -2.25875, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_4dpl6"]
+curve = SubResource("Curve_g3atk")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4l288"]
+emission_shape = 1
+emission_sphere_radius = 0.25
+direction = Vector3(0, 0, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 4.0
+initial_velocity_max = 4.0
+damping_min = 50.0
+damping_max = 50.0
+scale_min = 0.0
+scale_curve = SubResource("CurveTexture_4dpl6")
+color = Color(1, 0.670588, 0.611765, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_is2tk"]
+albedo_color = Color(0, 0.556863, 0.211765, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8ptuu"]
+material = SubResource("StandardMaterial3D_is2tk")
+size = Vector3(0.25, 0.25, 0.25)
+
+[sub_resource type="Skin" id="Skin_wou6c"]
+bind_count = 8
+bind/0/name = &""
+bind/0/bone = -1
+bind/0/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+bind/1/name = &""
+bind/1/bone = -1
+bind/1/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+bind/2/name = &""
+bind/2/bone = -1
+bind/2/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+bind/3/name = &""
+bind/3/bone = -1
+bind/3/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+bind/4/name = &""
+bind/4/bone = -1
+bind/4/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+bind/5/name = &""
+bind/5/bone = -1
+bind/5/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+bind/6/name = &""
+bind/6/bone = -1
+bind/6/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+bind/7/name = &""
+bind/7/bone = -1
+bind/7/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="GPUParticles3D" type="GPUParticles3D"]
+transform = Transform3D(0.816289, 0.408456, -0.408456, -0.577644, 0.577203, -0.577203, 0, 0.707107, 0.707107, 0, 0, 0)
+emitting = false
+amount = 15
+one_shot = true
+explosiveness = 0.85
+process_material = SubResource("ParticleProcessMaterial_4l288")
+draw_pass_1 = SubResource("BoxMesh_8ptuu")
+draw_skin = SubResource("Skin_wou6c")
+script = ExtResource("1_alkc7")
