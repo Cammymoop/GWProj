@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://dx7sphxw1jbxo"]
+[gd_scene load_steps=53 format=3 uid="uid://dx7sphxw1jbxo"]
 
 [ext_resource type="Material" uid="uid://bf6h0fc6bg625" path="res://meshes/materials/Stone.tres" id="1_wo1jc"]
 [ext_resource type="Material" uid="uid://l6csymeu2gyn" path="res://meshes/materials/WallHighContranstTriplanar.tres" id="2_60idd"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://csm3xijn7cq8x" path="res://scenes/LevelElements/special/pressure_plate.tscn" id="16_0gnag"]
 [ext_resource type="PackedScene" uid="uid://dy48vn6b25n60" path="res://scenes/LevelElements/pickups/gem_pickup.tscn" id="17_4peyf"]
 [ext_resource type="PackedScene" uid="uid://dvqlaxk4kvs7" path="res://scenes/LevelElements/pickups/gem_pickup_special.tscn" id="18_s600q"]
+[ext_resource type="PackedScene" uid="uid://dig2ywk02orjr" path="res://scenes/LevelElements/special/grapple_target.tscn" id="19_bj0rg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5as67"]
 
@@ -256,7 +257,7 @@ mesh = SubResource("BoxMesh_oc7v5")
 surface_material_override/0 = ExtResource("2_60idd")
 
 [node name="VoxelGI" type="VoxelGI" parent="."]
-size = Vector3(68.255, 33.549, 78.8814)
+size = Vector3(68.255, 73.5787, 78.8814)
 script = ExtResource("3_qni1y")
 
 [node name="FogVolume" type="FogVolume" parent="."]
@@ -825,6 +826,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0371, 8.86343, -19.0616)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.33804, 3.86605, -19.3375)
 
 [node name="MovingPlatform" parent="Node3D9" instance=ExtResource("13_mufnl")]
+travelTime = 2.0
 activation_mode = 2
 activator = NodePath("../../PressurePlate")
 end_position_node = NodePath("../EndPos")
@@ -848,6 +850,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.13597, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.257867, 3.86605, -19.3375)
 
 [node name="MovingPlatform" parent="Node3D10" instance=ExtResource("13_mufnl")]
+travelTime = 3.0
 activation_mode = 2
 activator = NodePath("../../PressurePlate")
 end_position_node = NodePath("../EndPos")
@@ -859,6 +862,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.13597, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.257867, 3.86605, -25.785)
 
 [node name="MovingPlatform" parent="Node3D11" instance=ExtResource("13_mufnl")]
+travelTime = 4.0
 activation_mode = 2
 activator = NodePath("../../PressurePlate")
 end_position_node = NodePath("../EndPos")
@@ -881,6 +885,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.13597, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.78839, 3.86605, -31.435)
 
 [node name="MovingPlatform" parent="Node3D13" instance=ExtResource("13_mufnl")]
+travelTime = 6.0
 activation_mode = 2
 activator = NodePath("../../PressurePlate")
 end_position_node = NodePath("../EndPos")
@@ -1010,3 +1015,6 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 19.462
 
 [node name="Gem_pickup_object" parent="." instance=ExtResource("18_s600q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6374, 7.5808, 25.8325)
+
+[node name="Mesh_GrappleTarget" parent="." instance=ExtResource("19_bj0rg")]
+transform = Transform3D(-1.67707e-07, 0, -3.8367, 0, 3.8367, 0, 3.8367, 0, -1.67707e-07, 21.6458, 17.5433, -19.9504)
