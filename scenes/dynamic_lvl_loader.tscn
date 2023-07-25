@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhxfx4e5vo8a7"]
+
+[ext_resource type="Script" path="res://src/dynamic_level_loader.gd" id="1_1331x"]
+[ext_resource type="PackedScene" uid="uid://dx7sphxw1jbxo" path="res://scenes/lvl/tutoral_test.tscn" id="2_lyfne"]
+
+[node name="DynamicLvlLoader" type="Node3D"]
+script = ExtResource("1_1331x")
+
+[node name="TestWorld" parent="." instance=ExtResource("2_lyfne")]
